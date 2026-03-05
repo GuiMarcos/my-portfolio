@@ -1,0 +1,13 @@
+<header>
+  <nav>
+    <a routerLink="/" class="logo">GM</a>
+    <button class="theme-btn"><lucide-icon [size]="18" [img]="Sun"></lucide-icon></button>
+    <button class="menu-btn" (click)="toggleMenu()"><lucide-icon [img]="Menu"></lucide-icon></button>
+    <ul class="nav-links" [class.show]="!isMenuHidden()">
+      <li><a routerLink="/home" routerLinkActive="active">Sobre</a></li>
+      <li><a routerLink="/about" routerLinkActive="active">Projetos</a></li>
+      <li><a routerLink="/projects" routerLinkActive="active">Habilidades</a></li>
+      <li><a routerLink="/contact" routerLinkActive="active">Contato</a></li>
+    </ul>
+  </nav>
+</header>
