@@ -1,1 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+@use 'ngx-toastr/toastr';
+@use 'scss-reset';
+@use './styles/variables' as *;
+
+html,
+body {
+  background-color: $background-dark;
+  /* Cor desejada */
+}
