@@ -25,7 +25,7 @@ header {
 
     .theme-btn {
       border-radius: 20px;
-      background-color: rgb(255 255 255 / 5%); // só o fundo fica transparente
+      background-color: rgb(255 255 255 / 5%);
       padding: 8px;
 
       &:hover {
@@ -35,7 +35,7 @@ header {
 
     .logo {
       color: $primary;
-      font-family: 'Space Grotesk', 'Segoe UI', Roboto, sans-serif;
+      font-family: $font-family-brand;
       font-weight: 700;
       font-size: 20px;
       cursor: pointer;
@@ -50,7 +50,7 @@ header {
       width: 60vw;
       align-items: center;
       gap: 3px;
-      background-color: rgb(255 255 255 / 5%); // só o fundo fica transparente
+      background-color: rgb(255 255 255 / 5%);
       border-radius: 10px;
 
       li {

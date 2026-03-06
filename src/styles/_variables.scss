@@ -1,5 +1,7 @@
 @use 'colours';
+@use 'typography';
 
 $primary: colours.$light-green;
 $background-dark: colours.$graphite;
 $text-dark: white;
+$font-family-brand: typography.$font-family-brand;
