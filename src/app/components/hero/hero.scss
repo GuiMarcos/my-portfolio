@@ -1,0 +1,150 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.btn-solid {
+  @include button-solid;
+}
+
+.btn-outline {
+  @include button-outline;
+}
+
+.content {
+  @include container;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - #{$header-height});
+  padding-bottom: 3.25rem;
+
+  .image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      display: block;
+      height: auto;
+      border-radius: 16px;
+      border: solid 1px $primary;
+    }
+  }
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    flex-grow: 1;
+
+    .text {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+
+      .main {
+        color: $text-light;
+        font-weight: bold;
+        font-size: $font-size-xl;
+
+        .name {
+          display: block;
+          color: $primary;
+        }
+      }
+
+      .job {
+        font-size: $font-size-lg;
+        color: $primary;
+      }
+
+    }
+
+    .buttons {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .links {
+      display: flex;
+      gap: 1rem;
+
+      a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: $text-light;
+        background-color: $secondary;
+        border-radius: 50%;
+        width: 45px;
+        height: 45px;
+        cursor: pointer;
+
+        &:hover {
+          background-color: $primary;
+          border-radius: 10px;
+        }
+      }
+    }
+  }
+
+  .arrow {
+    position: absolute;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: $primary;
+    cursor: pointer;
+    animation: arrow-bounce 1.4s ease-in-out infinite;
+
+    @media (prefers-reduced-motion: reduce) {
+      animation: none;
+    }
+  }
+
+  @keyframes arrow-bounce {
+
+    0%,
+    100% {
+      transform: translateX(-50%) translateY(0);
+    }
+
+    50% {
+      transform: translateX(-50%) translateY(8px);
+    }
+  }
+}
+
+@media screen and (min-width: #{$breakpoint-md}) {
+  .content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: minmax(0, 1fr);
+    align-items: center;
+
+    .image {
+      order: 1;
+    }
+
+    .wrapper {
+      order: 0;
+      gap: 1.5rem;
+    }
+  }
+}
+
+@media screen and (min-width: #{$breakpoint-lg}) {
+  .content .image img {
+    width: $hero-image-size-lg;
+    height: auto;
+  }
+
+  .text {
+    .main {
+      font-size: $font-size-3xl;
+    }
+
+    .job {
+      font-size: $font-size-2xl;
+    }
+  }
+}

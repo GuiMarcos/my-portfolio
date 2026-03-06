@@ -11,5 +11,21 @@ $text: colours.$pale-slate;
 $font-family-brand: typography.$font-family-brand;
 $font-family-main: typography.$font-family-main;
 
+$font-size-xs: typography.$font-size-xs;
+$font-size-sm: typography.$font-size-sm;
+$font-size-md: typography.$font-size-md;
+$font-size-lg: typography.$font-size-lg;
+$font-size-xl: typography.$font-size-xl;
+$font-size-2xl: typography.$font-size-2xl;
+$font-size-3xl: typography.$font-size-3xl;
+
 $vertical-padding: 10px;
-$horizontal-padding: 1rem;
+$horizontal-padding-sm: 1.5rem;
+$horizontal-padding-md: 10rem;
+$horizontal-padding-lg: 15rem;
+$header-height: 40px;
+
+$breakpoint-md: 800px;
+$breakpoint-lg: 1200px;
+
+$hero-image-size-lg: 450px;

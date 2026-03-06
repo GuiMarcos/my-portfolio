@@ -1,7 +1,15 @@
 @use './variables' as *;
 
 @mixin container {
-  padding: $horizontal-padding $vertical-padding;
+  padding: $vertical-padding $horizontal-padding-sm;
+
+  @media screen and (min-width: #{$breakpoint-md}) {
+    padding: $vertical-padding $horizontal-padding-md;
+  }
+
+  @media screen and (min-width: #{$breakpoint-lg}) {
+    padding: $vertical-padding $horizontal-padding-lg;
+  }
 }
 
 @mixin button-base {
@@ -13,7 +21,7 @@
   border-radius: 8px;
   border: 2px solid transparent;
   font-family: $font-family-main;
-  font-size: 16px;
+  font-size: $font-size-md;
   line-height: 1.5;
   cursor: pointer;
   transition: all 0.2s ease;
