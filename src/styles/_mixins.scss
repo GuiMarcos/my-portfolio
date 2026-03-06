@@ -1,5 +1,9 @@
 @use './variables' as *;
 
+@mixin container {
+  padding: $horizontal-padding $vertical-padding;
+}
+
 @mixin button-base {
   display: inline-flex;
   align-items: center;
