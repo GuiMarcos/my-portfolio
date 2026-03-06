@@ -2,6 +2,9 @@
 @use 'typography';
 
 $primary: colours.$light-green;
+$secondary: colours.$graphite-light;
 $background-dark: colours.$graphite;
-$text-dark: white;
+$text-light: colours.$light-gray;
+$text-dark: colours.$graphite;
 $font-family-brand: typography.$font-family-brand;
+$font-family-main: typography.$font-family-main;

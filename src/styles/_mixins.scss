@@ -1,0 +1,40 @@
+@use './variables' as *;
+
+@mixin button-base {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50px;
+  padding: .5rem 1rem;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  font-family: $font-family-main;
+  font-size: 16px;
+  line-height: 1.5;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  max-width: 100%;
+}
+
+@mixin button-solid($background: $primary, $text-color: $text-dark) {
+  @include button-base;
+  background-color: $background;
+  color: $text-color;
+
+  &:hover {
+    filter: brightness(0.95);
+    transform: translateY(-1px);
+  }
+}
+
+@mixin button-outline($border-color: $primary, $text-color: $primary) {
+  @include button-base;
+  background-color: transparent;
+  border-color: $border-color;
+  color: $text-color;
+
+  &:hover {
+    background-color: $border-color;
+    color: $text-dark;
+  }
+}

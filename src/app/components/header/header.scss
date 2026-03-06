@@ -17,15 +17,15 @@ header {
     justify-content: space-between;
     align-items: center;
     flex-grow: 1;
-    color: $text-dark;
+    color: $text-light;
 
     button {
-      color: $text-dark;
+      color: $text-light;
     }
 
     .theme-btn {
       border-radius: 20px;
-      background-color: rgb(255 255 255 / 5%);
+      background-color: $secondary;
       padding: 8px;
 
       &:hover {
@@ -50,7 +50,7 @@ header {
       width: 60vw;
       align-items: center;
       gap: 3px;
-      background-color: rgb(255 255 255 / 5%);
+      background-color: $secondary;
       border-radius: 10px;
 
       li {
