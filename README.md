@@ -57,3 +57,8 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+## Deps
+https://github.com/scttcper/ngx-toastr - ngx-toastr
+https://lucide.dev/guide/packages/lucide-angular - Lucile
+https://github.com/frontend-layers/scss-reset - Scss-reset
