@@ -3,11 +3,10 @@
 
 
 header {
-  $header-height: 40px;
   display: flex;
   height: $header-height;
   width: 100vw;
-  padding: $vertical-padding $horizontal-padding;
+  padding: $vertical-padding $horizontal-padding-sm;
   align-items: center;
 
   nav {
@@ -22,7 +21,7 @@ header {
     }
 
     .theme-btn {
-      border-radius: 20px;
+      border-radius: 50%;
       background-color: $secondary;
       padding: 8px;
 
@@ -35,7 +34,7 @@ header {
       color: $primary;
       font-family: $font-family-brand;
       font-weight: 700;
-      font-size: 20px;
+      font-size: $font-size-lg;
       cursor: pointer;
     }
 
@@ -44,12 +43,13 @@ header {
       flex-direction: column;
       position: absolute;
       top: $header-height;
-      right: $horizontal-padding;
+      right: $horizontal-padding-sm;
       width: 60vw;
       align-items: center;
       gap: 3px;
       background-color: $secondary;
       border-radius: 10px;
+      z-index: 10;
 
       li {
         text-align: center;
@@ -57,11 +57,19 @@ header {
 
         a {
           display: block;
+          color: $text-light;
+          font-size: $font-size-md;
           padding: 1em;
           cursor: pointer;
 
+          &.active {
+            color: $primary;
+            font-weight: 700;
+          }
+
           &:hover {
             background-color: $primary;
+            color: $text-dark;
             font-weight: 700;
             border-radius: 10px;
           }
@@ -74,10 +82,9 @@ header {
     }
   }
 
-  @media screen and (min-width: 799px) {
-    $horizontal-padding: 10rem;
+  @media screen and (min-width: #{$breakpoint-md}) {
 
-    padding: $vertical-padding $horizontal-padding;
+    padding: $vertical-padding $horizontal-padding-md;
 
     nav {
       .menu-btn {
