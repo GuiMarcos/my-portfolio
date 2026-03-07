@@ -1,0 +1,116 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: space-evenly;
+  gap: 20px;
+  min-height: 100vh;
+  .title {
+    font-size: $font-size-xl;
+    color: $text-light;
+    position: relative;
+    font-weight: bold;
+
+    &::after {
+      content: '';
+      display: block;
+      height: 4px;
+      background: $primary;
+      margin: 0.75rem auto 0;
+    }
+  }
+
+  .subtitle {
+    color: $text-light;
+    font-size: $font-size-xl;
+    font-weight: bold;
+  }
+
+  .cards {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    .card {
+      background-color: $secondary;
+      border-radius: 12px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-evenly;
+      min-height: 300px;
+      min-width: 280px;
+      max-width: 300px;
+
+      .icon {
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        background-color: rgba($primary, 0.2);
+        color: $primary;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+
+  .journey {
+    background-color: $primary;
+    border-radius: 12px;
+    color: $text-dark;
+    padding: 20px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    .box {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      .subtitle {
+        color: $text-dark;
+      }
+      .infos {
+        padding-top: 1rem;
+        display: flex;
+        gap: 30px;
+        font-size: $font-size-sm;
+        .highlight {
+          font-size: $font-size-xl;
+          font-weight: 800;
+        }
+      }
+    }
+    .image {
+      text-align: center;
+      img {
+        border-radius: 12px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: #{$breakpoint-md}) {
+  .content {
+    .cards {
+      flex-direction: row;
+    }
+
+    .journey {
+      align-items: center;
+      flex-direction: row;
+      gap: 20px;
+
+      .image img {
+        max-width: 500px;
+      }
+    }
+  }
+}

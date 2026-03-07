@@ -9,8 +9,9 @@ body {
   background-color: $background-dark;
   font-family: $font-family-main;
   color: $text;
+  max-width: 100%;
 }
 
-.container{
-    @include container;
+.container {
+  @include container;
 }
