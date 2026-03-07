@@ -2,10 +2,15 @@
 @use 'ngx-toastr/toastr';
 @use 'scss-reset';
 @use './styles/variables' as *;
+@use './styles/mixins' as *;
 
 html,
 body {
   background-color: $background-dark;
   font-family: $font-family-main;
   color: $text;
+}
+
+.container{
+    @include container;
 }

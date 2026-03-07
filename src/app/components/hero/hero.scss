@@ -10,7 +10,6 @@
 }
 
 .content {
-  @include container;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -133,18 +132,22 @@
 }
 
 @media screen and (min-width: #{$breakpoint-lg}) {
-  .content .image img {
+  .content {
+    .image img {
     width: $hero-image-size-lg;
     height: auto;
+    }
   }
 
-  .text {
-    .main {
-      font-size: $font-size-3xl;
-    }
+  wrapper{
+    .text {
+      .main {
+        font-size: $font-size-3xl;
+      }
 
-    .job {
-      font-size: $font-size-2xl;
+      .job {
+        font-size: $font-size-2xl;
+      }
     }
   }
 }
