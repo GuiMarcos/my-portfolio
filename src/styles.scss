@@ -2,10 +2,16 @@
 @use 'ngx-toastr/toastr';
 @use 'scss-reset';
 @use './styles/variables' as *;
+@use './styles/mixins' as *;
 
 html,
 body {
   background-color: $background-dark;
   font-family: $font-family-main;
   color: $text;
+  max-width: 100%;
+}
+
+.container {
+  @include container;
 }

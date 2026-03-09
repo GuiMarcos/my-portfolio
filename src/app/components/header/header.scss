@@ -1,11 +1,8 @@
 @use '../../../styles/variables' as *;
 
-
-
 header {
   display: flex;
   height: $header-height;
-  width: 100vw;
   padding: $vertical-padding $horizontal-padding-sm;
   align-items: center;
 
@@ -83,7 +80,6 @@ header {
   }
 
   @media screen and (min-width: #{$breakpoint-md}) {
-
     padding: $vertical-padding $horizontal-padding-md;
 
     nav {
