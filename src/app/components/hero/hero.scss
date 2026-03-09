@@ -1,13 +1,4 @@
 @use '../../../styles/variables' as *;
-@use '../../../styles/mixins' as *;
-
-.btn-solid {
-  @include button-solid;
-}
-
-.btn-outline {
-  @include button-outline;
-}
 
 .content {
   position: relative;
@@ -134,12 +125,12 @@
 @media screen and (min-width: #{$breakpoint-lg}) {
   .content {
     .image img {
-    width: $hero-image-size-lg;
-    height: auto;
+      width: $hero-image-size-lg;
+      height: auto;
     }
   }
 
-  wrapper{
+  wrapper {
     .text {
       .main {
         font-size: $font-size-3xl;
