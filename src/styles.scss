@@ -20,6 +20,14 @@ body {
   @include card-base();
 }
 
+.btn-solid {
+  @include button-solid;
+}
+
+.btn-outline {
+  @include button-outline;
+}
+
 .title {
   font-size: $font-size-xl;
   color: $text-light;

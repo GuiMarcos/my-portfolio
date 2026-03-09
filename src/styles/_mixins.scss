@@ -56,9 +56,11 @@
   $padding: 20px,
   $min-height: 300px,
   $min-width: 280px,
-  $max-width: 300px) {
+  $max-width: 300px,
+  $border-color: rgba($text-light, 0.12)) {
   background-color: $background;
   border-radius: $radius;
+  border: 1px solid $border-color;
   padding: $padding;
   display: flex;
   flex-direction: column;
