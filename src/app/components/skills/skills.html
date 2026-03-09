@@ -1,0 +1,38 @@
+<section class="skills-section" id="skills">
+  <div class="container content">
+    <h2 class="title">Habilidades</h2>
+    <p class="description">
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit repellat eaque eius totam! Aliquam numquam iusto sit
+      odit labore quae.
+    </p>
+    <div class="groups">
+      @for (group of skillGroups; track group.title) {
+      <div [class]="group.className + ' group'">
+        <h3 class="subtitle">{{ group.title }}</h3>
+
+        @for (skill of group.items; track skill.name) {
+        <div class="skill">
+          <div class="skill-header">
+            <p class="skill-name">{{ skill.name }}</p>
+            <p class="skill-level">{{ skill.level }}%</p>
+          </div>
+          <div class="skill-track" role="progressbar" [attr.aria-label]="'Nível em ' + skill.name" aria-valuemin="0"
+            aria-valuemax="100" [attr.aria-valuenow]="skill.level">
+            <span class="skill-fill" [style.width.%]="skill.level"></span>
+          </div>
+        </div>
+        }
+      </div>
+      }
+    </div>
+
+    <div class="other-tech">
+      <h3 class="subtitle">Outras Tecnologias</h3>
+      <ul class="other-tech-list">
+        @for (tech of otherTechnologies; track tech) {
+        <li class="other-tech-item">{{ tech }}</li>
+        }
+      </ul>
+    </div>
+  </div>
+</section>
