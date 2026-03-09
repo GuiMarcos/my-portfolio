@@ -25,12 +25,6 @@
     }
   }
 
-  .subtitle {
-    color: $text-light;
-    font-size: $font-size-xl;
-    font-weight: bold;
-  }
-
   .cards {
     display: flex;
     flex-direction: column;
@@ -40,6 +34,12 @@
     justify-content: space-evenly;
 
     .card {
+      .card-title {
+        color: $text-light;
+        font-size: $font-size-xl;
+        font-weight: bold;
+      }
+
       .icon {
         border-radius: 50%;
         width: 60px;
@@ -69,6 +69,8 @@
 
       .subtitle {
         color: $text-dark;
+        font-size: $font-size-xl;
+        font-weight: bold;
       }
 
       .infos {
