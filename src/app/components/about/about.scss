@@ -9,26 +9,9 @@
   justify-content: space-evenly;
   gap: 20px;
   min-height: 100vh;
-  .title {
-    font-size: $font-size-xl;
-    color: $text-light;
-    position: relative;
-    font-weight: bold;
 
-    &::after {
-      content: '';
-      display: block;
-      height: 4px;
-      background: $primary;
-      margin: 0.75rem auto 0;
-    }
-  }
 
-  .subtitle {
-    color: $text-light;
-    font-size: $font-size-xl;
-    font-weight: bold;
-  }
+
 
   .cards {
     display: flex;
@@ -37,6 +20,7 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-evenly;
+
     .card {
       background-color: $secondary;
       border-radius: 12px;
@@ -48,6 +32,12 @@
       min-height: 300px;
       min-width: 280px;
       max-width: 300px;
+
+      .card-title {
+        color: $text-light;
+        font-size: $font-size-xl;
+        font-weight: bold;
+      }
 
       .icon {
         border-radius: 50%;
@@ -70,26 +60,34 @@
     text-align: left;
     display: flex;
     flex-direction: column;
+
     .box {
       display: flex;
       flex-direction: column;
       gap: 10px;
+
       .subtitle {
         color: $text-dark;
+        font-size: $font-size-xl;
+        font-weight: bold;
       }
+
       .infos {
         padding-top: 1rem;
         display: flex;
         gap: 30px;
         font-size: $font-size-sm;
+
         .highlight {
           font-size: $font-size-xl;
           font-weight: 800;
         }
       }
     }
+
     .image {
       text-align: center;
+
       img {
         border-radius: 12px;
       }
