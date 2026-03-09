@@ -9,21 +9,6 @@
   gap: 20px;
   min-height: 100vh;
 
-  .title {
-    font-size: $font-size-xl;
-    color: $text-light;
-    position: relative;
-    font-weight: bold;
-
-    &::after {
-      content: '';
-      display: block;
-      height: 4px;
-      background: $primary;
-      margin: 0.75rem auto 0;
-    }
-  }
-
   .cards {
     display: flex;
     flex-direction: column;
@@ -33,6 +18,12 @@
     justify-content: space-evenly;
 
     .card {
+      .card-title {
+        color: $text-light;
+        font-size: $font-size-xl;
+        font-weight: bold;
+      }
+
       .card-title {
         color: $text-light;
         font-size: $font-size-xl;
