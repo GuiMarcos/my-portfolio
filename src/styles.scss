@@ -4,13 +4,33 @@
 @use './styles/variables' as *;
 @use './styles/mixins' as *;
 
+:root {
+  --header-offset: calc(#{$header-height} + (#{$vertical-padding} * 2));
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--header-offset);
+}
+
 body {
   background-color: $background-dark;
   font-family: $font-family-main;
   color: $text;
   max-width: 100%;
-  scroll-behavior: smooth;
+  padding-top: var(--header-offset);
+}
 
+section {
+  min-height: calc(100svh - var(--header-offset));
+}
+
+section[id] {
+  scroll-margin-top: var(--header-offset);
+}
+
+section>.container.content {
+  min-height: inherit;
 }
 
 

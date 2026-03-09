@@ -1,10 +1,18 @@
 @use '../../../styles/variables' as *;
 
 header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1000;
   display: flex;
   height: $header-height;
   padding: $vertical-padding $horizontal-padding-sm;
+  box-sizing: border-box;
   align-items: center;
+  background-color: $background-dark;
 
   nav {
     display: flex;
@@ -40,7 +48,7 @@ header {
       display: none;
       flex-direction: column;
       position: absolute;
-      top: $header-height;
+      top: calc(#{$header-height} + (#{$vertical-padding} * 2));
       right: $horizontal-padding-sm;
       width: 60vw;
       align-items: center;

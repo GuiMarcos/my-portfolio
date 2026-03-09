@@ -4,7 +4,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  min-height: calc(100vh - #{$header-height});
+  min-height: inherit;
   padding-bottom: 3.25rem;
 
   .image {
