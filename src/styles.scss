@@ -15,3 +15,22 @@ body {
 .container {
   @include container;
 }
+
+.card {
+  @include card-base();
+}
+
+.title {
+  font-size: $font-size-xl;
+  color: $text-light;
+  position: relative;
+  font-weight: bold;
+
+  &::after {
+    content: '';
+    display: block;
+    height: 4px;
+    background: $primary;
+    margin: 0.75rem auto 0;
+  }
+}
