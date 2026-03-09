@@ -1,13 +1,7 @@
-<section class="heroSection">
+<section id="home" class="heroSection">
   <div class="content container">
     <div class="image">
-      <img
-        ngSrc="https://placehold.co/800x800"
-        width="300"
-        height="300"
-        priority
-        alt="Foto de Guilherme"
-      />
+      <img ngSrc="https://placehold.co/800x800" width="300" height="300" priority alt="Foto de Guilherme" />
     </div>
     <div class="wrapper">
       <div class="text">
@@ -19,21 +13,21 @@
         </p>
       </div>
       <div class="buttons">
-        <button class="projects-btn btn-solid">Ver Projetos</button>
+        <button type="button" class="projects-btn btn-solid" (click)="navigateToFragment('portfolio')">Ver
+          Projetos</button>
         <button class="contact-btn btn-outline">Entre em Contato</button>
       </div>
       <div class="links">
-        <a href="http://" target="_blank" rel="noopener noreferrer"
-          ><lucide-icon [size]="20" [img]="Github"></lucide-icon
-        ></a>
-        <a href="http://" target="_blank" rel="noopener noreferrer"
-          ><lucide-icon [size]="20" [img]="Linkedin"></lucide-icon
-        ></a>
-        <a href="http://" target="_blank" rel="noopener noreferrer"
-          ><lucide-icon [size]="20" [img]="Mail"></lucide-icon
-        ></a>
+        <a href="http://" target="_blank" rel="noopener noreferrer"><lucide-icon [size]="20"
+            [img]="Github"></lucide-icon></a>
+        <a href="http://" target="_blank" rel="noopener noreferrer"><lucide-icon [size]="20"
+            [img]="Linkedin"></lucide-icon></a>
+        <a href="http://" target="_blank" rel="noopener noreferrer"><lucide-icon [size]="20"
+            [img]="Mail"></lucide-icon></a>
       </div>
     </div>
-    <lucide-icon class="arrow" [size]="30" [img]="ArrowDown"></lucide-icon>
+    <button type="button" class="arrow" (click)="navigateToFragment('about')" aria-label="Ir para seção Sobre Mim">
+      <lucide-icon [size]="30" [img]="ArrowDown"></lucide-icon>
+    </button>
   </div>
 </section>

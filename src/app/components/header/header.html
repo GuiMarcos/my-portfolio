@@ -1,13 +1,13 @@
 <header>
   <nav>
-    <a routerLink="/" class="logo">GM</a>
+    <a [routerLink]="[]" fragment="home" class="logo">GM</a>
     <button class="theme-btn"><lucide-icon [size]="18" [img]="Sun"></lucide-icon></button>
     <button class="menu-btn" (click)="toggleMenu()"><lucide-icon [img]="Menu"></lucide-icon></button>
     <ul class="nav-links" (click)="isMenuHidden.set(true)" [class.show]="!isMenuHidden()">
-      <li><a routerLink="/home" routerLinkActive="active">Sobre</a></li>
-      <li><a routerLink="/about" routerLinkActive="active">Projetos</a></li>
-      <li><a routerLink="/projects" routerLinkActive="active">Habilidades</a></li>
-      <li><a routerLink="/contact" routerLinkActive="active">Contato</a></li>
+      <li><a [routerLink]="[]" fragment="about" [class.active]="isFragmentActive('about')">Sobre</a></li>
+      <li><a [routerLink]="[]" fragment="portfolio" [class.active]="isFragmentActive('portfolio')">Projetos</a></li>
+      <li><a [routerLink]="[]" fragment="skills" [class.active]="isFragmentActive('skills')">Habilidades</a></li>
+      <li><a [routerLink]="[]" fragment="contact" [class.active]="isFragmentActive('contact')">Contato</a></li>
     </ul>
   </nav>
 </header>

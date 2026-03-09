@@ -29,6 +29,7 @@ header {
 
     .logo {
       color: $primary;
+      text-decoration: none;
       font-family: $font-family-brand;
       font-weight: 700;
       font-size: $font-size-lg;
@@ -53,6 +54,7 @@ header {
         width: 100%;
 
         a {
+          text-decoration: none;
           display: block;
           color: $text-light;
           font-size: $font-size-md;
