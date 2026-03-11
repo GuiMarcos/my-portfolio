@@ -1,1 +1,45 @@
-<p>footer works!</p>
+<footer>
+  <div class="content container">
+    <div class="brand">
+      <h2 class="name">Guilherme Marcos</h2>
+      <p class="description">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt.
+      </p>
+      <div class="social-links">
+        <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <lucide-icon [img]="Github" [size]="20"></lucide-icon>
+        </a>
+        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <lucide-icon [img]="Linkedin" [size]="20"></lucide-icon>
+        </a>
+        <a href="mailto:contato@exemplo.com" aria-label="Email">
+          <lucide-icon [img]="Mail" [size]="20"></lucide-icon>
+        </a>
+      </div>
+    </div>
+
+    <div class="links">
+      <h3 class="title">Links Rápidos</h3>
+      <ul>
+        @for (link of navLinks; track link.fragment) {
+        <li>
+          <a [routerLink]="[]" [fragment]="link.fragment">{{ link.label }}</a>
+        </li>
+        }
+      </ul>
+    </div>
+
+    <div class="services">
+      <h3 class="title">Serviços</h3>
+      <ul>
+        @for (service of services; track service.label) {
+        <li>{{ service.label }}</li>
+        }
+      </ul>
+    </div>
+  </div>
+
+  <div class="bottom container">
+    <p class="copyright">&copy; {{ currentYear }} Guilherme Marcos. Feito com &#10084;&#65039; em Angular</p>
+  </div>
+</footer>
