@@ -1,7 +1,8 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { LucideAngularModule, Github, Linkedin, Mail } from 'lucide-angular';
-import { NavLink, SocialLink } from '../../shared/models/footer.model';
+import { SocialLink } from '../../shared/models/footer.model';
+import { NavigationLink } from '../../shared/models/navigation-link.model';
 
 @Component({
   selector: 'app-footer',
@@ -29,7 +30,7 @@ export class Footer {
     { icon: Mail, url: 'mailto:contato@exemplo.com', ariaLabel: 'Email' },
   ];
 
-  protected readonly navLinks: NavLink[] = [
+  protected readonly navLinks: NavigationLink[] = [
     { fragment: 'home', label: 'Início' },
     { fragment: 'about', label: 'Sobre Mim' },
     { fragment: 'portfolio', label: 'Projetos' },

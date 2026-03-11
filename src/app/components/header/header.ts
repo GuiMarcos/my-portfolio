@@ -1,11 +1,7 @@
 import { Component, inject, signal } from '@angular/core';
 import { LucideAngularModule, Sun, Menu } from 'lucide-angular';
 import { Router, RouterLink } from '@angular/router';
-
-interface NavItem {
-  fragment: string;
-  label: string;
-};
+import { NavigationLink } from '../../shared/models/navigation-link.model';
 
 @Component({
   selector: 'app-header',
@@ -19,7 +15,7 @@ export class Header {
   readonly Sun = Sun;
   readonly Menu = Menu;
 
-  protected readonly navItems: NavItem[] = [
+  protected readonly navItems: NavigationLink[] = [
     { fragment: 'about', label: 'Sobre' },
     { fragment: 'portfolio', label: 'Projetos' },
     { fragment: 'skills', label: 'Habilidades' },
