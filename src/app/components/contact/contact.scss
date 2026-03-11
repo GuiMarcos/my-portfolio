@@ -140,6 +140,12 @@
   }
 }
 
+@media screen and (min-width: #{$breakpoint-md}) {
+
+  .card-text {
+    font-size: $font-size-md;
+  }
+}
 
 @media screen and (min-width: #{$breakpoint-lg}) {
   .content {
