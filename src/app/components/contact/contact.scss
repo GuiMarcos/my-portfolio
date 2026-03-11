@@ -1,0 +1,176 @@
+@use "../../../styles/variables" as *;
+
+
+.content {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 20px;
+  min-height: inherit;
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+
+    .infos {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+      width: 100%;
+      max-width: 420px;
+
+
+      .subtitle {
+        color: $text-light;
+        font-size: $font-size-lg;
+        font-weight: bold;
+      }
+
+      .cards {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+
+        .card {
+          flex-direction: row;
+          min-height: auto;
+          text-align: left;
+          justify-content: start;
+          gap: 10px;
+          max-width: none;
+
+          .card-icon {
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            background-color: rgba($primary, 0.2);
+            color: $primary;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+
+          .card-text {
+            font-size: $font-size-sm;
+          }
+        }
+      }
+
+      .banner {
+        border-radius: 12px;
+        background-color: $primary;
+        color: $text-dark;
+        padding: 1rem 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .banner-title {
+          font-weight: bold;
+        }
+
+        .banner-text {
+          font-size: $font-size-sm;
+        }
+      }
+    }
+
+    .contact-box {
+      max-width: 580px;
+      align-items: stretch;
+      justify-content: flex-start;
+      gap: 10px;
+      border-radius: 14px;
+      text-align: left;
+      width: 100%;
+
+      .card-title {
+        color: $text-light;
+        font-size: $font-size-xl;
+        font-weight: 700;
+      }
+
+      .input-box {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        label {
+          color: $text-light;
+          font-size: $font-size-md;
+        }
+
+        input,
+        textarea {
+          width: 100%;
+          border-radius: 10px;
+          border: 1px solid rgba($text-light, 0.15);
+          background-color: rgba($background-dark, 0.2);
+          color: $text-light;
+          padding: 0.9rem 1rem;
+          font-family: inherit;
+          font-size: $font-size-md;
+          outline: none;
+          transition: border-color .2s ease, box-shadow .2s ease;
+        }
+
+        textarea {
+          resize: vertical;
+          min-height: 170px;
+        }
+
+        input:focus,
+        textarea:focus {
+          border-color: rgba($primary, 0.75);
+          box-shadow: 0 0 0 2px rgba($primary, 0.2);
+        }
+      }
+
+      .btn-solid {
+        gap: 10px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: #{$breakpoint-md}) {
+
+  .card-text {
+    font-size: $font-size-md;
+  }
+}
+
+@media screen and (min-width: #{$breakpoint-lg}) {
+  .content {
+    .wrapper {
+      flex-direction: row;
+      align-items: stretch;
+      justify-content: center;
+
+      .infos {
+        .subtitle {
+          font-size: $font-size-xl;
+        }
+
+        .banner {
+          gap: 10px;
+
+          .banner-title {
+            font-size: $font-size-lg;
+          }
+
+          .banner-text {
+            font-size: $font-size-md;
+          }
+        }
+      }
+    }
+  }
+}

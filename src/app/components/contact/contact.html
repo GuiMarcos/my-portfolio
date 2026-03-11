@@ -1,1 +1,69 @@
-<p>contact works!</p>
+<section class="contact-section" id="contact">
+  <div class="content container">
+    <h2 class="title">Entre em Contato</h2>
+    <p class="description">
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Soluta aperiam placeat, deleniti consequuntur totam
+      magni rem neque quis ullam eius?
+    </p>
+    <div class="wrapper">
+      <div class="infos">
+        <h4 class="subtitle">Informações de Contato</h4>
+        <div class="cards">
+          <div class="card">
+            <div class="card-icon">
+              <lucide-icon [img]="Mail"></lucide-icon>
+            </div>
+            <div class="card-text">
+              <p class="label">Email</p>
+              <p class="info">guilherme.amarcos@gmail.com</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-icon">
+              <lucide-icon [img]="Phone"></lucide-icon>
+            </div>
+            <div class="card-text">
+              <p class="label">Phone</p>
+              <p class="info">+55(51)98240-0703</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-icon">
+              <lucide-icon [img]="Pin"></lucide-icon>
+            </div>
+            <div class="card-text">
+              <p class="label">Localização</p>
+              <p class="info">Paraná, Brasil</p>
+            </div>
+          </div>
+        </div>
+        <div class="banner">
+          <h4 class="banner-title">Disponível para Freelance</h4>
+          <p class="banner-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque libero enim
+            praesentium
+            reiciendis error amet rerum a deserunt reprehenderit aperiam.</p>
+        </div>
+      </div>
+      <div class="contact-box card">
+        <h4 class="card-title">Envie uma Mensagem</h4>
+        <div class="input-box">
+          <label for="nameInput">Nome</label>
+          <input type="text" name="name" id="nameInput" autocomplete="name">
+        </div>
+        <div class="input-box">
+          <label for="emailInput">Email</label>
+          <input type="email" name="email" id="emailInput" autocomplete="email">
+        </div>
+        <div class="input-box">
+          <label for="subjectInput">Assunto</label>
+          <input type="text" name="subject" id="subjectInput">
+        </div>
+        <div class="input-box">
+          <label for="messageInput">Mensagem</label>
+          <textarea id="messageInput" name="mensagem"></textarea>
+        </div>
+        <button class="btn-solid"><lucide-icon [img]="Send" /> Enviar Mensagem</button>
+      </div>
+    </div>
+  </div>
+</section>
