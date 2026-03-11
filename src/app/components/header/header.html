@@ -1,17 +1,19 @@
 <header>
-  <nav>
-    <a [routerLink]="[]" fragment="home" class="logo">GM</a>
-    <button class="theme-btn"><lucide-icon [size]="18" [img]="Sun"></lucide-icon></button>
-    <button class="menu-btn" (click)="toggleMenu()"><lucide-icon [img]="Menu"></lucide-icon></button>
-    <ul class="nav-links" [class.show]="!isMenuHidden()">
-      @for (item of navItems; track item.fragment) {
-      <li>
-        <a [routerLink]="[]" [fragment]="item.fragment" [class.active]="isFragmentActive(item.fragment)"
-          (click)="hideMenu()">
-          {{ item.label }}
-        </a>
-      </li>
-      }
-    </ul>
-  </nav>
+  <div class="container">
+    <nav>
+      <a [routerLink]="[]" fragment="home" class="logo">GM</a>
+      <button class="theme-btn"><lucide-icon [size]="18" [img]="Sun"></lucide-icon></button>
+      <button class="menu-btn" (click)="toggleMenu()"><lucide-icon [img]="Menu"></lucide-icon></button>
+      <ul class="nav-links" [class.show]="!isMenuHidden()">
+        @for (item of navItems; track item.fragment) {
+        <li>
+          <a [routerLink]="[]" [fragment]="item.fragment" [class.active]="isFragmentActive(item.fragment)"
+            (click)="hideMenu()">
+            {{ item.label }}
+          </a>
+        </li>
+        }
+      </ul>
+    </nav>
+  </div>
 </header>

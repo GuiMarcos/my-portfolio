@@ -5,111 +5,111 @@ header {
   top: 0;
   left: 0;
   right: 0;
-  width: 100%;
   z-index: 1000;
-  display: flex;
+  width: 100%;
   height: $header-height;
-  padding: $vertical-padding $horizontal-padding-sm;
   box-sizing: border-box;
   align-items: center;
   background-color: $background-dark;
 
-  nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-grow: 1;
-    color: $text-light;
-
-    button {
-      color: $text-light;
-    }
-
-    .theme-btn {
-      border-radius: 50%;
-      background-color: $secondary;
-      padding: 8px;
-
-      &:hover {
-        background-color: $primary;
-      }
-    }
-
-    .logo {
-      color: $primary;
-      text-decoration: none;
-      font-family: $font-family-brand;
-      font-weight: 700;
-      font-size: $font-size-lg;
-      cursor: pointer;
-    }
-
-    .nav-links {
-      display: none;
-      flex-direction: column;
-      position: absolute;
-      top: calc(#{$header-height} + (#{$vertical-padding} * 2));
-      right: $horizontal-padding-sm;
-      width: 60vw;
-      align-items: center;
-      gap: 3px;
-      background-color: $secondary;
-      border-radius: 10px;
-      z-index: 10;
-
-      li {
-        text-align: center;
-        width: 100%;
-
-        a {
-          text-decoration: none;
-          display: block;
-          color: $text-light;
-          font-size: $font-size-md;
-          padding: 1em;
-          cursor: pointer;
-
-          &.active {
-            color: $primary;
-            font-weight: 700;
-          }
-
-          &:hover {
-            background-color: $primary;
-            color: $text-dark;
-            font-weight: 700;
-            border-radius: 10px;
-          }
-        }
-      }
-    }
-
-    .nav-links.show {
-      display: flex;
-    }
-  }
-
-  @media screen and (min-width: #{$breakpoint-md}) {
-    padding: $vertical-padding $horizontal-padding-md;
+  .container {
+    flex-direction: row;
+    padding-top: 0;
+    padding-bottom: 0;
 
     nav {
-      .menu-btn {
-        display: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-grow: 1;
+      color: $text-light;
+
+      button {
+        color: $text-light;
+      }
+
+      .logo {
+        font-family: $font-family-brand;
+        font-size: $font-size-lg;
+        font-weight: 700;
+        text-decoration: none;
+        color: $primary;
+        cursor: pointer;
       }
 
       .theme-btn {
-        order: 2;
+        padding: 8px;
+        border-radius: 50%;
+        background-color: $secondary;
+
+        @media screen and (min-width: #{$breakpoint-md}) {
+          order: 2;
+        }
+
+        &:hover {
+          background-color: $primary;
+        }
+      }
+
+      .menu-btn {
+        @media screen and (min-width: #{$breakpoint-md}) {
+          display: none;
+        }
       }
 
       .nav-links {
-        background-color: transparent;
-        display: flex;
-        position: relative;
-        width: auto;
-        flex-direction: row;
-        top: auto;
-        right: auto;
-        order: 1;
+        position: absolute;
+        top: calc(#{$header-height} + (#{$vertical-padding} * 2));
+        right: $horizontal-padding-sm;
+        z-index: 10;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        gap: 3px;
+        width: 60vw;
+        border-radius: 10px;
+        background-color: $secondary;
+
+        @media screen and (min-width: #{$breakpoint-md}) {
+          position: relative;
+          top: auto;
+          right: auto;
+          display: flex;
+          flex-direction: row;
+          order: 1;
+          width: auto;
+          background-color: transparent;
+        }
+
+        &.show {
+          display: flex;
+        }
+
+        li {
+          width: 100%;
+          text-align: center;
+
+          a {
+            display: block;
+            padding: 1em;
+            font-size: $font-size-md;
+            text-decoration: none;
+            color: $text-light;
+            cursor: pointer;
+
+            &.active {
+              font-weight: 700;
+              color: $primary;
+            }
+
+            &:hover {
+              border-radius: 10px;
+              background-color: $primary;
+              font-weight: 700;
+              color: $text-dark;
+            }
+          }
+        }
       }
     }
   }

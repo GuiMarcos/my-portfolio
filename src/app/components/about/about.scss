@@ -1,72 +1,74 @@
 @use '../../../styles/variables' as *;
 
 .content {
-  display: flex;
-  flex-direction: column;
   align-items: center;
-  text-align: center;
   justify-content: space-evenly;
-  gap: 20px;
+  gap: $gap-lg;
   min-height: inherit;
+  text-align: center;
 
   .cards {
     display: flex;
     flex-direction: column;
-    gap: 30px;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-evenly;
+    gap: $gap-xl;
+
+    @media screen and (min-width: #{$breakpoint-md}) {
+      flex-direction: row;
+    }
 
     .card {
       .card-title {
-        color: $text-light;
         font-size: $font-size-xl;
         font-weight: bold;
-      }
-
-      .card-title {
         color: $text-light;
-        font-size: $font-size-xl;
-        font-weight: bold;
       }
 
       .icon {
-        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         width: 60px;
         height: 60px;
+        border-radius: 50%;
         background-color: rgba($primary, 0.2);
         color: $primary;
-        display: flex;
-        justify-content: center;
-        align-items: center;
       }
     }
   }
 
   .journey {
-    background-color: $primary;
-    border-radius: 12px;
-    color: $text-dark;
-    padding: 20px;
-    text-align: left;
     display: flex;
     flex-direction: column;
+    padding: 20px;
+    border-radius: 12px;
+    background-color: $primary;
+    color: $text-dark;
+    text-align: left;
+
+    @media screen and (min-width: #{$breakpoint-md}) {
+      align-items: center;
+      flex-direction: row;
+      gap: $gap-lg;
+    }
 
     .box {
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: $gap-sm;
 
       .subtitle {
-        color: $text-dark;
         font-size: $font-size-xl;
         font-weight: bold;
+        color: $text-dark;
       }
 
       .infos {
-        padding-top: 1rem;
         display: flex;
-        gap: 30px;
+        gap: $gap-xl;
+        padding-top: 1rem;
         font-size: $font-size-sm;
 
         .highlight {
@@ -81,24 +83,10 @@
 
       img {
         border-radius: 12px;
-      }
-    }
-  }
-}
 
-@media screen and (min-width: #{$breakpoint-md}) {
-  .content {
-    .cards {
-      flex-direction: row;
-    }
-
-    .journey {
-      align-items: center;
-      flex-direction: row;
-      gap: 20px;
-
-      .image img {
-        max-width: 500px;
+        @media screen and (min-width: #{$breakpoint-md}) {
+          max-width: 500px;
+        }
       }
     }
   }
