@@ -53,14 +53,15 @@ export class Skills {
 
   protected readonly otherTechnologies: string[] = [
     'JavaScript',
+    'RabbitMQ',
     'REST API',
     'Tailwind CSS',
+    'SASS',
     'Bootstrap',
-    'Angular Material',
     'PrimeNG',
-    'GitHub',
-    'GitLab',
+    'Angular Material',
     'RxJS',
+    'GitHub / GitLab',
     'PostgreSQL',
     'MySQL',
     'ESLint',
@@ -71,5 +72,7 @@ export class Skills {
     'Testes Unitários',
     'Acessibilidade (WCAG, ARIA)',
     'Design Responsivo',
+    'Prog. Orientada a Objetos',
+    'Microserviços'
   ];
 }
