@@ -13,29 +13,28 @@ import { AboutCard, AboutStat } from '../../shared/models/about.model';
 export class About {
   readonly sectionTitle = 'Sobre Mim';
   readonly description =
-    'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam, voluptas! Tenetur quas, laboriosam velit adipisci, facilis iure culpa dolore excepturi laudantium suscipit quaerat, odit minus? Mollitia quos quibusdam quisquam enim?';
-
+    'Sou estudante de Engenharia da Computação na UTFPR e atuo na modernização e sustentação de sistemas de grande escala. Minha paixão é unir o desenvolvimento front-end e back-end para construir aplicações robustas , focando sempre na usabilidade, estabilidade operacional e na entrega de valor real para as pessoas.'
   protected readonly cards: AboutCard[] = [
     {
       icon: ChevronsLeftRight,
       title: 'Desenvolvimento',
-      text: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officiis voluptatibus veniam magnam pariatur libero omnis dignissimos amet mollitia obcaecati? Molestias!',
+      text: ': Construção de aplicações web e desktop completas utilizando tecnologias modernas como JavaScript, Angular, Svelte, Node.js e Java',
     },
     {
       icon: Lightbulb,
       title: 'Inovação',
-      text: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officiis voluptatibus veniam magnam pariatur libero omnis dignissimos amet mollitia obcaecati? Molestias!',
+      text: 'Aplicação de conceitos de UI/UX, estruturação modular e design responsivo para criar interfaces modernas, escaláveis e com foco em acessibilidade (WCAG).',
     },
     {
       icon: Zap,
       title: 'Perfomance',
-      text: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officiis voluptatibus veniam magnam pariatur libero omnis dignissimos amet mollitia obcaecati? Molestias!',
+      text: 'Otimização rigorosa de sistemas, com histórico de resolução de gargalos críticos e elevação de métricas de desempenho (como o salto no Lighthouse de 36 para 94).',
     },
   ];
 
   readonly journey = {
     subtitle: 'Minha Jornada',
-    text: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde ullam vel impedit, cum esse vero, ex incidunt officiis assumenda natus temporibus a accusantium quo pariatur placeat aliquid? Dignissimos veniam, laudantium sunt enim odio ab necessitatibus deserunt culpa reprehenderit? Dolor rem sed maiores magni odio earum quas nemo nostrum eum non?',
+    text: 'De projetos acadêmicos estruturados e templates freelancers à modernização de sistemas institucionais para dezenas de milhares de usuários. Descubra como minha trajetória técnica desenvolveu minha visão de produto e foco na resolução de problemas',
     stats: [
       { label: 'Projetos', value: '10+' },
       { label: 'Experiência', value: '2 anos' },

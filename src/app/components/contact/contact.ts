@@ -13,9 +13,7 @@ export class Contact {
   readonly Send = Send;
 
   readonly sectionTitle = 'Entre em Contato';
-  readonly description =
-    'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Soluta aperiam placeat, deleniti consequuntur totam magni rem neque quis ullam eius?';
-
+  readonly description = 'Vamos construir algo incrível juntos? Sinta-se à vontade para me mandar uma mensagem para conversarmos sobre tecnologia, oportunidades de desenvolvimento ou novas ideias.'
   readonly infosTitle = 'Informações de Contato';
 
   readonly contactItems: ContactItem[] = [
@@ -26,7 +24,7 @@ export class Contact {
 
   readonly banner = {
     title: 'Disponível para Freelance',
-    text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque libero enim praesentium reiciendis error amet rerum a deserunt reprehenderit aperiam.',
+    text: 'Com sólida experiência na elaboração e comercialização de templates e soluções web personalizadas e responsivas, estou aberto a novos projetos autônomos. Vamos tirar sua ideia do papel!',
   };
 
   readonly form = {

@@ -12,7 +12,7 @@ import { Project } from '../../shared/models/portfolio.model';
 export class Portfolio {
   readonly sectionTitle = 'Meus Projetos';
   readonly description =
-    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae deserunt sint tempore perspiciatis eius praesentium quod, nam rerum aperiam voluptates, quibusdam eum similique repellendus beatae dolore quaerat magnam quo minima.';
+    'Uma seleção dos meus principais desafios e soluções, desde o desenvolvimento de totens de autoatendimento em Java até a reformulação de sistemas web complexos e criação de templates responsivos.';
   readonly allProjectsLabel = 'Ver todos os projetos';
 
   protected readonly projects: Project[] = [

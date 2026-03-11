@@ -17,7 +17,7 @@ export class Footer {
   readonly brand = {
     name: 'Guilherme Marcos',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt.',
+      'Construindo experiências digitais com código, visão sistêmica e alta performance.',
   };
 
   readonly linksTitle = 'Links Rápidos';

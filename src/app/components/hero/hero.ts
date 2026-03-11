@@ -24,7 +24,7 @@ export class Hero {
     name: 'Guilherme Marcos',
     jobTitle: 'Desenvolvedor Full Stack',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+      'Transformando ideias em soluções digitais completas. Especialista em criar interfaces responsivas e escaláveis , unindo código limpo e boas práticas de UI/UX para entregar a melhor experiência ao usuário, desde a modelagem de dados até o front-end.',
     buttons: {
       projects: 'Ver Projetos',
       contact: 'Entre em Contato',
