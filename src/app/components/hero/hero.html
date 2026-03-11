@@ -1,29 +1,30 @@
 <section id="home" class="heroSection">
   <div class="content container">
     <div class="image">
-      <img ngSrc="https://placehold.co/800x800" width="300" height="300" priority alt="Foto de Guilherme" />
+      <img [ngSrc]="content.photo.src" width="300" height="300" priority [alt]="content.photo.alt" />
     </div>
     <div class="wrapper">
       <div class="text">
-        <h1 class="main">Olá, eu sou <strong class="name">Guilherme Marcos</strong></h1>
-        <h2 class="job">Desenvolvedor Full Stack</h2>
-        <p class="description">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt
-          ut labore et dolore magna aliqua.
-        </p>
+        <h1 class="main">{{ content.greeting }} <strong class="name">{{ content.name }}</strong></h1>
+        <h2 class="job">{{ content.jobTitle }}</h2>
+        <p class="description">{{ content.description }}</p>
       </div>
       <div class="buttons">
-        <button type="button" class="projects-btn btn-solid" (click)="navigateToFragment('portfolio')">Ver
-          Projetos</button>
-        <button class="contact-btn btn-outline">Entre em Contato</button>
+        <button type="button" class="projects-btn btn-solid" (click)="navigateToFragment('portfolio')">
+          {{ content.buttons.projects }}
+        </button>
+        <button class="contact-btn btn-outline">{{ content.buttons.contact }}</button>
       </div>
       <div class="links">
-        <a href="http://" target="_blank" rel="noopener noreferrer"><lucide-icon [size]="20"
-            [img]="Github"></lucide-icon></a>
-        <a href="http://" target="_blank" rel="noopener noreferrer"><lucide-icon [size]="20"
-            [img]="Linkedin"></lucide-icon></a>
-        <a href="http://" target="_blank" rel="noopener noreferrer"><lucide-icon [size]="20"
-            [img]="Mail"></lucide-icon></a>
+        <a [href]="content.links.github" target="_blank" rel="noopener noreferrer">
+          <lucide-icon [size]="20" [img]="Github"></lucide-icon>
+        </a>
+        <a [href]="content.links.linkedin" target="_blank" rel="noopener noreferrer">
+          <lucide-icon [size]="20" [img]="Linkedin"></lucide-icon>
+        </a>
+        <a [href]="content.links.email" target="_blank" rel="noopener noreferrer">
+          <lucide-icon [size]="20" [img]="Mail"></lucide-icon>
+        </a>
       </div>
     </div>
     <button type="button" class="arrow" (click)="navigateToFragment('about')" aria-label="Ir para seção Sobre Mim">

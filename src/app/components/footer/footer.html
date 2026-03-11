@@ -1,25 +1,19 @@
 <footer>
   <div class="content container">
     <div class="brand">
-      <h2 class="name">Guilherme Marcos</h2>
-      <p class="description">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt.
-      </p>
+      <h2 class="name">{{ brand.name }}</h2>
+      <p class="description">{{ brand.description }}</p>
       <div class="social-links">
-        <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-          <lucide-icon [img]="Github" [size]="20"></lucide-icon>
+        @for (social of socialLinks; track social.ariaLabel) {
+        <a [href]="social.url" target="_blank" rel="noopener noreferrer" [attr.aria-label]="social.ariaLabel">
+          <lucide-icon [img]="social.icon" [size]="20"></lucide-icon>
         </a>
-        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-          <lucide-icon [img]="Linkedin" [size]="20"></lucide-icon>
-        </a>
-        <a href="mailto:contato@exemplo.com" aria-label="Email">
-          <lucide-icon [img]="Mail" [size]="20"></lucide-icon>
-        </a>
+        }
       </div>
     </div>
 
     <div class="links">
-      <h3 class="title">Links Rápidos</h3>
+      <h3 class="title">{{ linksTitle }}</h3>
       <ul>
         @for (link of navLinks; track link.fragment) {
         <li>
@@ -30,16 +24,16 @@
     </div>
 
     <div class="services">
-      <h3 class="title">Serviços</h3>
+      <h3 class="title">{{ servicesTitle }}</h3>
       <ul>
-        @for (service of services; track service.label) {
-        <li>{{ service.label }}</li>
+        @for (service of services; track service) {
+        <li>{{ service }}</li>
         }
       </ul>
     </div>
   </div>
 
   <div class="bottom container">
-    <p class="copyright">&copy; {{ currentYear }} Guilherme Marcos. Feito em Angular</p>
+    <p class="copyright">&copy; {{ currentYear }} {{ brand.name }}. {{ copyrightSuffix }}</p>
   </div>
 </footer>

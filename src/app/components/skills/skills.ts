@@ -1,23 +1,19 @@
-import { Component } from '@angular/core';
-
-interface SkillItem {
-  name: string;
-  level: number;
-}
-
-interface SkillGroup {
-  title: string;
-  className: string;
-  items: SkillItem[];
-}
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { SkillGroup } from '../../shared/models/skills.model';
 
 @Component({
   selector: 'app-skills',
   imports: [],
   templateUrl: './skills.html',
   styleUrl: './skills.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Skills {
+  readonly sectionTitle = 'Habilidades';
+  readonly description =
+    'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit repellat eaque eius totam! Aliquam numquam iusto sit odit labore quae.';
+  readonly otherTechTitle = 'Outras Tecnologias';
+
   protected readonly skillGroups: SkillGroup[] = [
     {
       title: 'Frontend',
@@ -46,7 +42,7 @@ export class Skills {
         { name: 'Git', level: 90 },
         { name: 'Docker', level: 70 },
         { name: 'Postman', level: 60 },
-        { name: 'Figma', level: 65 }
+        { name: 'Figma', level: 65 },
       ],
     },
   ];
@@ -73,6 +69,6 @@ export class Skills {
     'Acessibilidade (WCAG, ARIA)',
     'Design Responsivo',
     'Prog. Orientada a Objetos',
-    'Microserviços'
+    'Microserviços',
   ];
 }

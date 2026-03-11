@@ -1,10 +1,7 @@
 <section class="skills-section" id="skills">
   <div class="container content">
-    <h2 class="title">Habilidades</h2>
-    <p class="description">
-      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit repellat eaque eius totam! Aliquam numquam iusto sit
-      odit labore quae.
-    </p>
+    <h2 class="title">{{ sectionTitle }}</h2>
+    <p class="description">{{ description }}</p>
     <div class="groups">
       @for (group of skillGroups; track group.title) {
       <div [class]="group.className + ' group'">
@@ -27,7 +24,7 @@
     </div>
 
     <div class="other-tech">
-      <h3 class="subtitle">Outras Tecnologias</h3>
+      <h3 class="subtitle">{{ otherTechTitle }}</h3>
       <ul class="other-tech-list">
         @for (tech of otherTechnologies; track tech) {
         <li class="other-tech-item">{{ tech }}</li>

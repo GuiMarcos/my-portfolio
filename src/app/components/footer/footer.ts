@@ -1,15 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { LucideAngularModule, Github, Linkedin, Mail } from 'lucide-angular';
-
-interface NavLink {
-  fragment: string;
-  label: string;
-}
-
-interface ServiceItem {
-  label: string;
-}
+import { NavLink, SocialLink } from '../../shared/models/footer.model';
 
 @Component({
   selector: 'app-footer',
@@ -19,11 +11,23 @@ interface ServiceItem {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Footer {
-  readonly Github = Github;
-  readonly Linkedin = Linkedin;
-  readonly Mail = Mail;
-
   readonly currentYear = new Date().getFullYear();
+
+  readonly brand = {
+    name: 'Guilherme Marcos',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt.',
+  };
+
+  readonly linksTitle = 'Links Rápidos';
+  readonly servicesTitle = 'Serviços';
+  readonly copyrightSuffix = 'Feito em Angular';
+
+  readonly socialLinks: SocialLink[] = [
+    { icon: Github, url: 'https://github.com', ariaLabel: 'GitHub' },
+    { icon: Linkedin, url: 'https://linkedin.com', ariaLabel: 'LinkedIn' },
+    { icon: Mail, url: 'mailto:contato@exemplo.com', ariaLabel: 'Email' },
+  ];
 
   protected readonly navLinks: NavLink[] = [
     { fragment: 'home', label: 'Início' },
@@ -32,10 +36,10 @@ export class Footer {
     { fragment: 'skills', label: 'Habilidades' },
   ];
 
-  protected readonly services: ServiceItem[] = [
-    { label: 'Desenvolvimento Web' },
-    { label: 'UI/UX Design' },
-    { label: 'Consultoria' },
-    { label: 'Freelance' },
+  protected readonly services: string[] = [
+    'Desenvolvimento Web',
+    'UI/UX Design',
+    'Consultoria',
+    'Freelance',
   ];
 }

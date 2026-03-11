@@ -1,62 +1,33 @@
 <section id="about" class="about-section">
   <div class="container content">
-    <h2 class="title">Sobre Mim</h2>
-    <p class="description">
-      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam, voluptas! Tenetur quas,
-      laboriosam velit adipisci, facilis iure culpa dolore excepturi laudantium suscipit quaerat,
-      odit minus? Mollitia quos quibusdam quisquam enim?
-    </p>
+    <h2 class="title">{{ sectionTitle }}</h2>
+    <p class="description">{{ description }}</p>
     <div class="cards">
+      @for (card of cards; track card.title) {
       <div class="card">
-        <div class="icon"><lucide-icon [img]="Chevrons"></lucide-icon></div>
-        <h4 class="card-title">Desenvolvimento</h4>
-        <p class="card-text">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officiis voluptatibus veniam
-          magnam pariatur libero omnis dignissimos amet mollitia obcaecati? Molestias!
-        </p>
+        <div class="icon"><lucide-icon [img]="card.icon"></lucide-icon></div>
+        <h4 class="card-title">{{ card.title }}</h4>
+        <p class="card-text">{{ card.text }}</p>
       </div>
-      <div class="card">
-        <div class="icon"><lucide-icon [img]="Lightbulb"></lucide-icon></div>
-        <h4 class="card-title">Inovação</h4>
-        <p class="card-text">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officiis voluptatibus veniam
-          magnam pariatur libero omnis dignissimos amet mollitia obcaecati? Molestias!
-        </p>
-      </div>
-      <div class="card">
-        <div class="icon"><lucide-icon [img]="Zap"></lucide-icon></div>
-        <h4 class="card-title">Perfomance</h4>
-        <p class="card-text">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officiis voluptatibus veniam
-          magnam pariatur libero omnis dignissimos amet mollitia obcaecati? Molestias!
-        </p>
-      </div>
+      }
     </div>
     <div class="journey">
       <div class="box">
-        <h4 class="subtitle">Minha Jornada</h4>
+        <h4 class="subtitle">{{ journey.subtitle }}</h4>
         <div class="text">
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde ullam vel impedit, cum
-            esse vero, ex incidunt officiis assumenda natus temporibus a accusantium quo pariatur
-            placeat aliquid? Dignissimos veniam, laudantium sunt enim odio ab necessitatibus
-            deserunt culpa reprehenderit? Dolor rem sed maiores magni odio earum quas nemo nostrum
-            eum non?
-          </p>
+          <p>{{ journey.text }}</p>
           <div class="infos">
-            <div class="projetos">
-              <p>Projetos</p>
-              <p class="highlight">10+</p>
+            @for (stat of journey.stats; track stat.label) {
+            <div>
+              <p>{{ stat.label }}</p>
+              <p class="highlight">{{ stat.value }}</p>
             </div>
-            <div class="experiencias">
-              <p>Experiência</p>
-              <p class="highlight">2 anos</p>
-            </div>
+            }
           </div>
         </div>
       </div>
       <div class="image">
-        <img ngSrc="https://placehold.co/800x800" width="300" height="300" alt="Foto relacionado a Jornada" />
+        <img [ngSrc]="journey.image.src" width="300" height="300" [alt]="journey.image.alt" />
       </div>
     </div>
   </div>

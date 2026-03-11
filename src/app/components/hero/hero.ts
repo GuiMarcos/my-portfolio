@@ -1,12 +1,14 @@
-import { Component, inject } from '@angular/core';
-import { LucideAngularModule, Github, Linkedin, Mail, ArrowDown } from "lucide-angular";
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { LucideAngularModule, Github, Linkedin, Mail, ArrowDown } from 'lucide-angular';
 import { NgOptimizedImage } from '@angular/common';
 import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-hero',
   imports: [LucideAngularModule, NgOptimizedImage],
   templateUrl: './hero.html',
   styleUrl: './hero.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Hero {
   private readonly router = inject(Router);
@@ -15,6 +17,24 @@ export class Hero {
   readonly Linkedin = Linkedin;
   readonly Mail = Mail;
   readonly ArrowDown = ArrowDown;
+
+  readonly content = {
+    photo: { src: 'https://placehold.co/800x800', alt: 'Foto de Guilherme' },
+    greeting: 'Olá, eu sou',
+    name: 'Guilherme Marcos',
+    jobTitle: 'Desenvolvedor Full Stack',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    buttons: {
+      projects: 'Ver Projetos',
+      contact: 'Entre em Contato',
+    },
+    links: {
+      github: 'http://',
+      linkedin: 'http://',
+      email: 'http://',
+    },
+  };
 
   navigateToFragment(fragment: string): void {
     void this.router.navigate([], { fragment });

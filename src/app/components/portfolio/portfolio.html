@@ -1,59 +1,23 @@
 <section id="portfolio" class="portfolio-section">
   <div class="container content">
-    <h2 class="title">Meus Projetos</h2>
-    <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae deserunt sint tempore
-      perspiciatis eius praesentium quod, nam rerum aperiam voluptates, quibusdam eum similique repellendus beatae
-      dolore quaerat magnam quo minima.</p>
+    <h2 class="title">{{ sectionTitle }}</h2>
+    <p class="description">{{ description }}</p>
     <div class="cards">
+      @for (project of projects; track project.title) {
       <div class="card">
-        <div class="image"><img ngSrc="https://placehold.co/600x400" alt="Projeto 1 Foto" width="600" height="400">
+        <div class="image">
+          <img [ngSrc]="project.image.src" [alt]="project.image.alt" [width]="project.image.width" [height]="project.image.height">
         </div>
-        <h4 class="card-title">
-          Projeto 1
-        </h4>
-        <p class="card-text">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id ea ratione corporis enim cupiditate iste, fugit
-          inventore minus nisi exercitationem?
-        </p>
+        <h4 class="card-title">{{ project.title }}</h4>
+        <p class="card-text">{{ project.description }}</p>
         <div class="techs">
-          <span>React</span>
-          <span>TypeScript</span>
-          <span>Node.js</span>
+          @for (tech of project.techs; track tech) {
+          <span>{{ tech }}</span>
+          }
         </div>
       </div>
-      <div class="card">
-        <div class="image"><img ngSrc="https://placehold.co/600x400" alt="Projeto 1 Foto" width="600" height="400">
-        </div>
-        <h4 class="card-title">
-          Projeto 1
-        </h4>
-        <p class="card-text">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id ea ratione corporis enim cupiditate iste, fugit
-          inventore minus nisi exercitationem?
-        </p>
-        <div class="techs">
-          <span>React</span>
-          <span>TypeScript</span>
-          <span>Node.js</span>
-        </div>
-      </div>
-      <div class="card">
-        <div class="image"><img ngSrc="https://placehold.co/600x400" alt="Projeto 1 Foto" width="600" height="400">
-        </div>
-        <h4 class="card-title">
-          Projeto 1
-        </h4>
-        <p class="card-text">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id ea ratione corporis enim cupiditate iste, fugit
-          inventore minus nisi exercitationem?
-        </p>
-        <div class="techs">
-          <span>React</span>
-          <span>TypeScript</span>
-          <span>Node.js</span>
-        </div>
-      </div>
+      }
     </div>
-    <button class="all-projects-btn btn-outline">Ver todos os projetos</button>
+    <button class="all-projects-btn btn-outline">{{ allProjectsLabel }}</button>
   </div>
 </section>
