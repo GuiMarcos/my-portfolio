@@ -29,3 +29,10 @@ $breakpoint-md: 800px;
 $breakpoint-lg: 1200px;
 
 $hero-image-size-lg: 450px;
+
+// Responsive gaps (clamp: mobile → desktop)
+$gap-xs: clamp(0.5rem, 1vw, 0.75rem); //  8px → 12px
+$gap-sm: clamp(0.625rem, 1.5vw, 1rem); // 10px → 16px
+$gap-md: clamp(1rem, 2.5vw, 1.5rem); // 16px → 24px
+$gap-lg: clamp(1.25rem, 3vw, 2rem); // 20px → 32px
+$gap-xl: clamp(1.875rem, 4vw, 3rem); // 30px → 48px

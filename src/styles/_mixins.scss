@@ -1,6 +1,8 @@
 @use './variables' as *;
 
 @mixin container {
+  display: flex;
+  flex-direction: column;
   padding: $vertical-padding $horizontal-padding-sm;
 
   @media screen and (min-width: #{$breakpoint-md}) {
