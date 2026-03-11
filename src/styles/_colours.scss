@@ -5,3 +5,31 @@ $graphite-light: #424144;
 $fern: #4f772d;
 $light-gray: #f5f5f5;
 $pale-slate: #b3b5bb;
+
+/* ─── Dark theme (default) ────────────────────────────────────────── */
+$dark-primary: $light-green;
+$dark-bg: $graphite;
+$dark-bg-secondary: $graphite-light;
+$dark-text: $pale-slate;
+$dark-text-light: $light-gray;
+$dark-border: rgba(245, 245, 245, 0.12);
+$dark-skill-track-bg: $graphite-light;
+$dark-other-tech-bg: rgba(66, 65, 68, 0.32);
+$dark-other-tech-border: rgba(179, 181, 187, 0.26);
+$dark-input-bg: rgba(54, 53, 55, 0.2);
+$dark-input-border: rgba(245, 245, 245, 0.15);
+$dark-footer-border: $graphite;
+
+/* ─── Light theme ──────────────────────────────────────────────────── */
+$light-primary: $fern;
+$light-bg: #ffffff;
+$light-bg-secondary: $light-gray;
+$light-text: $graphite;
+$light-text-light: $graphite;
+$light-border: rgba(0, 0, 0, 0.12);
+$light-skill-track-bg: #e0e0e0;
+$light-other-tech-bg: #ffffff;
+$light-other-tech-border: rgba(0, 0, 0, 0.2);
+$light-input-bg: #ffffff;
+$light-input-border: rgba(0, 0, 0, 0.15);
+$light-footer-border: #e0e0e0;

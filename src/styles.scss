@@ -1,22 +1,62 @@
 /* You can add global styles to this file, and also import other style files */
 @use 'ngx-toastr/toastr';
 @use 'scss-reset';
+@use './styles/colours' as colours;
 @use './styles/variables' as *;
 @use './styles/mixins' as *;
 
+/* ─── Theme tokens ────────────────────────────────────────────────── */
 :root {
   --header-offset: calc(#{$header-height} + (#{$vertical-padding} * 2));
+  --primary: #{colours.$dark-primary};
+  --button-outline-text: #{colours.$dark-primary};
+  --button-outline-hover-text: #{colours.$graphite};
+  --bg: #{colours.$dark-bg};
+  --bg-section-alt: #{colours.$dark-bg};
+  --bg-card: #{colours.$dark-bg-secondary};
+  --bg-surface: #{colours.$dark-bg-secondary};
+  --border-card: #{colours.$dark-border};
+  --text: #{colours.$dark-text};
+  --text-heading: #{colours.$dark-text-light};
+  --skill-track-bg: #{colours.$dark-skill-track-bg};
+  --other-tech-item-bg: #{colours.$dark-other-tech-bg};
+  --other-tech-item-border: #{colours.$dark-other-tech-border};
+  --input-bg: #{colours.$dark-input-bg};
+  --input-border: #{colours.$dark-input-border};
+  --input-color: #{colours.$dark-text-light};
+  --footer-border: #{colours.$dark-footer-border};
 }
 
+[data-theme="light"] {
+  --primary: #{colours.$light-primary};
+  --button-outline-text: #{colours.$light-primary};
+  --button-outline-hover-text: #ffffff;
+  --bg: #{colours.$light-bg};
+  --bg-section-alt: #{colours.$light-bg-secondary};
+  --bg-card: #{colours.$light-bg};
+  --bg-surface: #{colours.$light-bg-secondary};
+  --border-card: #{colours.$light-border};
+  --text: #{colours.$light-text};
+  --text-heading: #{colours.$light-text-light};
+  --skill-track-bg: #{colours.$light-skill-track-bg};
+  --other-tech-item-bg: #{colours.$light-other-tech-bg};
+  --other-tech-item-border: #{colours.$light-other-tech-border};
+  --input-bg: #{colours.$light-input-bg};
+  --input-border: #{colours.$light-input-border};
+  --input-color: #{colours.$light-text-light};
+  --footer-border: #{colours.$light-footer-border};
+}
+
+/* ─── Base ────────────────────────────────────────────────────────── */
 html {
   scroll-behavior: smooth;
   scroll-padding-top: var(--header-offset);
 }
 
 body {
-  background-color: $background-dark;
+  background-color: var(--bg);
   font-family: $font-family-main;
-  color: $text;
+  color: var(--text);
   max-width: 100%;
   padding-top: var(--header-offset);
 }
@@ -33,13 +73,15 @@ section>.container.content {
   min-height: inherit;
 }
 
-
+/* ─── Global utility classes ──────────────────────────────────────── */
 .container {
   @include container;
 }
 
 .card {
   @include card-base();
+  background-color: var(--bg-card);
+  border-color: var(--border-card);
 }
 
 .btn-solid {
@@ -47,14 +89,14 @@ section>.container.content {
 }
 
 .btn-outline {
-  @include button-outline;
+  @include button-outline(var(--button-outline-text), var(--button-outline-text), var(--button-outline-hover-text));
 }
 
 .title {
-  font-size: $font-size-xl;
-  color: $text-light;
   position: relative;
+  font-size: $font-size-xl;
   font-weight: bold;
+  color: var(--text-heading);
 
   &::after {
     content: '';

@@ -37,7 +37,7 @@
       display: block;
       height: auto;
       border-radius: 16px;
-      border: solid 1px $primary;
+      border: solid 1px var(--primary);
 
       @media screen and (min-width: #{$breakpoint-lg}) {
         width: $hero-image-size-lg;
@@ -45,99 +45,99 @@
       }
     }
   }
+}
 
-  .wrapper {
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: space-evenly;
+
+  @media screen and (min-width: #{$breakpoint-md}) {
+    order: 0;
+    gap: $gap-md;
+  }
+
+  .text {
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
-    justify-content: space-evenly;
+    gap: $gap-md;
 
-    @media screen and (min-width: #{$breakpoint-md}) {
-      order: 0;
-      gap: $gap-md;
-    }
+    .main {
+      font-size: $font-size-xl;
+      font-weight: bold;
+      color: var(--text-heading);
 
-    .text {
-      display: flex;
-      flex-direction: column;
-      gap: $gap-md;
-
-      .main {
-        font-size: $font-size-xl;
-        font-weight: bold;
-        color: $text-light;
-
-        @media screen and (min-width: #{$breakpoint-lg}) {
-          font-size: $font-size-3xl;
-        }
-
-        .name {
-          display: block;
-          color: $primary;
-        }
+      @media screen and (min-width: #{$breakpoint-lg}) {
+        font-size: $font-size-3xl;
       }
 
-      .job {
-        font-size: $font-size-lg;
-        color: $primary;
-
-        @media screen and (min-width: #{$breakpoint-lg}) {
-          font-size: $font-size-2xl;
-        }
+      .name {
+        display: block;
+        color: var(--primary);
       }
     }
 
-    .buttons {
-      display: flex;
-      gap: $gap-sm;
-    }
+    .job {
+      font-size: $font-size-lg;
+      color: var(--primary);
 
-    .links {
-      display: flex;
-      gap: $gap-sm;
-
-      a {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 45px;
-        height: 45px;
-        border-radius: 50%;
-        background-color: $secondary;
-        color: $text-light;
-        cursor: pointer;
-
-        &:hover {
-          background-color: $primary;
-          border-radius: 10px;
-        }
+      @media screen and (min-width: #{$breakpoint-lg}) {
+        font-size: $font-size-2xl;
       }
     }
   }
 
-  .arrow {
-    position: absolute;
-    bottom: 12px;
-    left: 50%;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    border: 0;
-    padding: 0;
-    background: transparent;
-    color: $primary;
-    transform: translateX(-50%);
-    animation: arrow-bounce 1.4s ease-in-out infinite;
-    cursor: pointer;
+  .buttons {
+    display: flex;
+    gap: $gap-sm;
+  }
 
-    &:focus-visible {
-      outline: 2px solid $primary;
-      outline-offset: 4px;
-      border-radius: 8px;
-    }
+  .links {
+    display: flex;
+    gap: $gap-sm;
 
-    @media (prefers-reduced-motion: reduce) {
-      animation: none;
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      background-color: $secondary;
+      color: $text-light;
+      cursor: pointer;
+
+      &:hover {
+        background-color: var(--primary);
+        border-radius: 10px;
+      }
     }
+  }
+}
+
+.arrow {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  color: var(--primary);
+  transform: translateX(-50%);
+  animation: arrow-bounce 1.4s ease-in-out infinite;
+  cursor: pointer;
+
+  &:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 4px;
+    border-radius: 8px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
   }
 }

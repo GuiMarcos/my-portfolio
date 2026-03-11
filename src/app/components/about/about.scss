@@ -1,5 +1,9 @@
 @use '../../../styles/variables' as *;
 
+.about-section {
+  background-color: var(--bg-section-alt);
+}
+
 .content {
   align-items: center;
   justify-content: space-evenly;
@@ -23,7 +27,7 @@
       .card-title {
         font-size: $font-size-xl;
         font-weight: bold;
-        color: $text-light;
+        color: var(--text-heading);
       }
 
       .icon {
@@ -33,8 +37,8 @@
         width: 60px;
         height: 60px;
         border-radius: 50%;
-        background-color: rgba($primary, 0.2);
-        color: $primary;
+        background-color: color-mix(in srgb, var(--primary) 20%, transparent);
+        color: var(--primary);
       }
     }
   }

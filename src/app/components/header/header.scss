@@ -10,7 +10,7 @@ header {
   height: $header-height;
   box-sizing: border-box;
   align-items: center;
-  background-color: $background-dark;
+  background-color: var(--bg);
 
   .container {
     flex-direction: row;
@@ -22,10 +22,10 @@ header {
       align-items: center;
       justify-content: space-between;
       flex-grow: 1;
-      color: $text-light;
+      color: var(--text);
 
       button {
-        color: $text-light;
+        color: var(--text);
       }
 
       .logo {
@@ -33,21 +33,21 @@ header {
         font-size: $font-size-lg;
         font-weight: 700;
         text-decoration: none;
-        color: $primary;
+        color: var(--primary);
         cursor: pointer;
       }
 
       .theme-btn {
         padding: 8px;
         border-radius: 50%;
-        background-color: $secondary;
+        background-color: var(--bg-surface);
 
         @media screen and (min-width: #{$breakpoint-md}) {
           order: 2;
         }
 
         &:hover {
-          background-color: $primary;
+          background-color: var(--primary);
         }
       }
 
@@ -68,7 +68,7 @@ header {
         gap: 3px;
         width: 60vw;
         border-radius: 10px;
-        background-color: $secondary;
+        background-color: var(--bg-surface);
 
         @media screen and (min-width: #{$breakpoint-md}) {
           position: relative;
@@ -94,19 +94,19 @@ header {
             padding: 1em;
             font-size: $font-size-md;
             text-decoration: none;
-            color: $text-light;
+            color: var(--text);
             cursor: pointer;
 
             &.active {
               font-weight: 700;
-              color: $primary;
+              color: var(--primary);
             }
 
             &:hover {
               border-radius: 10px;
-              background-color: $primary;
+              background-color: var(--primary);
               font-weight: 700;
-              color: $text-dark;
+              color: var(--button-outline-hover-text);
             }
           }
         }

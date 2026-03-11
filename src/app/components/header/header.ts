@@ -1,18 +1,22 @@
-import { Component, inject, signal } from '@angular/core';
-import { LucideAngularModule, Sun, Menu } from 'lucide-angular';
+import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
+import { LucideAngularModule, Sun, Moon, Menu } from 'lucide-angular';
 import { Router, RouterLink } from '@angular/router';
 import { NavigationLink } from '../../shared/models/navigation-link.model';
+import { ThemeService } from '../../core/services/theme.service';
 
 @Component({
   selector: 'app-header',
   imports: [LucideAngularModule, RouterLink],
   templateUrl: './header.html',
   styleUrl: './header.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Header {
   private readonly router = inject(Router);
+  protected readonly themeService = inject(ThemeService);
 
   readonly Sun = Sun;
+  readonly Moon = Moon;
   readonly Menu = Menu;
 
   protected readonly navItems: NavigationLink[] = [
@@ -25,7 +29,7 @@ export class Header {
   protected isMenuHidden = signal<boolean>(true);
 
   protected toggleMenu() {
-    this.isMenuHidden.set(!this.isMenuHidden())
+    this.isMenuHidden.set(!this.isMenuHidden());
   }
 
   protected hideMenu() {

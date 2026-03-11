@@ -31,7 +31,7 @@
       .subtitle {
         font-size: $font-size-lg;
         font-weight: bold;
-        color: $text-light;
+        color: var(--text-heading);
 
         @media screen and (min-width: #{$breakpoint-lg}) {
           font-size: $font-size-xl;
@@ -51,6 +51,8 @@
           min-height: auto;
           max-width: none;
           text-align: left;
+          background-color: var(--bg-surface);
+          border-color: var(--border-card);
 
           .card-icon {
             display: flex;
@@ -59,8 +61,8 @@
             width: 40px;
             height: 40px;
             border-radius: 50%;
-            background-color: rgba($primary, 0.2);
-            color: $primary;
+            background-color: color-mix(in srgb, var(--primary) 20%, transparent);
+            color: var(--primary);
           }
 
           .card-text {
@@ -112,11 +114,13 @@
       max-width: 580px;
       border-radius: 14px;
       text-align: left;
+      background-color: var(--bg-surface);
+      border-color: var(--border-card);
 
       .card-title {
         font-size: $font-size-xl;
         font-weight: 700;
-        color: $text-light;
+        color: var(--text-heading);
       }
 
       .input-box {
@@ -126,20 +130,20 @@
 
         label {
           font-size: $font-size-md;
-          color: $text-light;
+          color: var(--text-heading);
         }
 
         input,
         textarea {
           width: 100%;
           padding: 0.9rem 1rem;
-          border: 1px solid rgba($text-light, 0.15);
+          border: 1px solid var(--input-border);
           border-radius: 10px;
           outline: none;
-          background-color: rgba($background-dark, 0.2);
+          background-color: var(--input-bg);
           font-family: inherit;
           font-size: $font-size-md;
-          color: $text-light;
+          color: var(--input-color);
           transition: border-color .2s ease, box-shadow .2s ease;
 
           &:focus {

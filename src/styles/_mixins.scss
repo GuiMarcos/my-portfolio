@@ -41,7 +41,7 @@
   }
 }
 
-@mixin button-outline($border-color: $primary, $text-color: $primary) {
+@mixin button-outline($border-color: $primary, $text-color: $primary, $hover-text: $text-dark) {
   @include button-base;
   background-color: transparent;
   border-color: $border-color;
@@ -49,7 +49,7 @@
 
   &:hover {
     background-color: $border-color;
-    color: $text-dark;
+    color: $hover-text;
   }
 }
 
