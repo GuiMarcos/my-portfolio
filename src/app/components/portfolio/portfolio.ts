@@ -12,7 +12,7 @@ import { Project } from '../../shared/models/portfolio.model';
 export class Portfolio {
   readonly sectionTitle = 'Meus Projetos';
   readonly description =
-    'Uma seleção dos meus principais desafios e soluções, desde o desenvolvimento de totens de autoatendimento em Java até a reformulação de sistemas web complexos e criação de templates responsivos.';
+    'Uma curadoria dos meus melhores trabalhos, refletindo minha expertise em desenvolvimento full stack, design responsivo e soluções escaláveis. Cada projeto representa desafios superados e aprendizados aplicados na prática.';
   readonly allProjectsLabel = 'Ver todos os projetos';
 
   protected readonly projects: Project[] = [
@@ -20,7 +20,12 @@ export class Portfolio {
       title: 'Projeto 1',
       description:
         'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id ea ratione corporis enim cupiditate iste, fugit inventore minus nisi exercitationem?',
-      image: { src: 'https://placehold.co/600x400', alt: 'Foto do Projeto 1', width: 600, height: 400 },
+      image: {
+        src: 'https://placehold.co/600x400',
+        alt: 'Foto do Projeto 1',
+        width: 600,
+        height: 400,
+      },
       techs: ['React', 'TypeScript', 'Node.js'],
       liveUrl: '',
       repoUrl: '',
@@ -29,7 +34,12 @@ export class Portfolio {
       title: 'Projeto 2',
       description:
         'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id ea ratione corporis enim cupiditate iste, fugit inventore minus nisi exercitationem?',
-      image: { src: 'https://placehold.co/600x400', alt: 'Foto do Projeto 2', width: 600, height: 400 },
+      image: {
+        src: 'https://placehold.co/600x400',
+        alt: 'Foto do Projeto 2',
+        width: 600,
+        height: 400,
+      },
       techs: ['Angular', 'TypeScript', 'SCSS'],
       liveUrl: '',
       repoUrl: '',
@@ -38,7 +48,12 @@ export class Portfolio {
       title: 'Projeto 3',
       description:
         'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id ea ratione corporis enim cupiditate iste, fugit inventore minus nisi exercitationem?',
-      image: { src: 'https://placehold.co/600x400', alt: 'Foto do Projeto 3', width: 600, height: 400 },
+      image: {
+        src: 'https://placehold.co/600x400',
+        alt: 'Foto do Projeto 3',
+        width: 600,
+        height: 400,
+      },
       techs: ['Java', 'Spring Boot', 'PostgreSQL'],
       liveUrl: '',
       repoUrl: '',

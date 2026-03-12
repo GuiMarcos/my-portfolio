@@ -13,28 +13,28 @@ import { AboutCard, AboutStat } from '../../shared/models/about.model';
 export class About {
   readonly sectionTitle = 'Sobre Mim';
   readonly description =
-    'Sou estudante de Engenharia da Computação na UTFPR e atuo na modernização e sustentação de sistemas de grande escala. Minha paixão é unir o desenvolvimento front-end e back-end para construir aplicações robustas , focando sempre na usabilidade, estabilidade operacional e na entrega de valor real para as pessoas.'
+    'Desenvolvedor full stack apaixonado por criar soluções de qualidade. Tenho experiência em modernização de sistemas, desenvolvimento de aplicações web escaláveis e entrega de valor real aos usuários. Meu foco é sempre na usabilidade, performance e boas práticas de engenharia.';
   protected readonly cards: AboutCard[] = [
     {
       icon: ChevronsLeftRight,
       title: 'Desenvolvimento',
-      text: ': Construção de aplicações web e desktop completas utilizando tecnologias modernas como JavaScript, Angular, Svelte, Node.js e Java',
+      text: 'Construção de aplicações web e desktop completas, atuando em frontend, backend e infraestrutura. Especializado em criar soluções escaláveis e mantíveis.',
     },
     {
       icon: Lightbulb,
       title: 'Inovação',
-      text: 'Aplicação de conceitos de UI/UX, estruturação modular e design responsivo para criar interfaces modernas, escaláveis e com foco em acessibilidade (WCAG).',
+      text: 'Aplicação de conceitos modernos de design e desenvolvimento, criando interfaces acessíveis, responsivas e com foco na experiência do usuário final.',
     },
     {
       icon: Zap,
-      title: 'Perfomance',
-      text: 'Otimização rigorosa de sistemas, com histórico de resolução de gargalos críticos e elevação de métricas de desempenho (como o salto no Lighthouse de 36 para 94).',
+      title: 'Performance',
+      text: 'Otimização rigorosa de sistemas e código, sempre buscando melhorar métricas de desempenho e oferecer aplicações rápidas e responsivas aos usuários.',
     },
   ];
 
   readonly journey = {
     subtitle: 'Minha Jornada',
-    text: 'De projetos acadêmicos estruturados e templates freelancers à modernização de sistemas institucionais para dezenas de milhares de usuários. Descubra como minha trajetória técnica desenvolveu minha visão de produto e foco na resolução de problemas',
+    text: 'Uma trajetória de aprendizado constante, enfrentando desafios cada vez maiores e desenvolvendo habilidades em diferentes áreas do desenvolvimento. Cada projeto me ensinou algo valioso sobre a importância de código limpo, arquitetura sólida e impacto para o usuário.',
     stats: [
       { label: 'Projetos', value: '10+' },
       { label: 'Experiência', value: '2 anos' },

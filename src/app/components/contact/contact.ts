@@ -13,7 +13,8 @@ export class Contact {
   readonly Send = Send;
 
   readonly sectionTitle = 'Entre em Contato';
-  readonly description = 'Vamos construir algo incrível juntos? Sinta-se à vontade para me mandar uma mensagem para conversarmos sobre tecnologia, oportunidades de desenvolvimento ou novas ideias.'
+  readonly description =
+    'Tenho interesse em novos desafios e colaborações. Sinta-se à vontade para me contatar em relação a oportunidades de trabalho, projetos conjuntos ou simplesmente para trocar ideias sobre tecnologia.';
   readonly infosTitle = 'Informações de Contato';
 
   readonly contactItems: ContactItem[] = [

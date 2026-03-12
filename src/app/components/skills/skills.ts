@@ -11,7 +11,7 @@ import { SkillGroup } from '../../shared/models/skills.model';
 export class Skills {
   readonly sectionTitle = 'Habilidades';
   readonly description =
-    'Um panorama das tecnologias, linguagens e ferramentas, como integrações via APIs REST, bancos de dados relacionais e Git , que utilizo no meu dia a dia para dar vida a projetos, atuando em todas as camadas da aplicação.';
+    'Conjunto diverso de tecnologias e ferramentas que domino para desenvolver soluções completas e robustas. Atuo em todas as camadas da aplicação, desde a modelagem de dados até a criação de interfaces modernas e responsivas.';
   readonly otherTechTitle = 'Outras Tecnologias';
 
   protected readonly skillGroups: SkillGroup[] = [
