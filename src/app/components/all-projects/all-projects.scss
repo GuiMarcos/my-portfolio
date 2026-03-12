@@ -1,0 +1,86 @@
+@use '../../../styles/variables' as *;
+
+.all-projects {
+  padding: 4rem 1rem;
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    h1 {
+      text-align: center;
+      margin-bottom: 3rem;
+      font-size: $font-size-2xl;
+      color: var(--text-heading);
+    }
+  }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: $gap-lg;
+    justify-items: center;
+  }
+
+  .project-card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 340px;
+    gap: $gap-lg;
+    text-decoration: none;
+    color: inherit;
+    border-radius: 8px;
+    overflow: hidden;
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    .image {
+      margin: -20px;
+      padding-bottom: 10px;
+      border-radius: inherit;
+
+      img {
+        width: 100%;
+        border-radius: inherit;
+        object-fit: cover;
+        display: block;
+      }
+    }
+
+    .card-title {
+      align-self: start;
+      font-size: $font-size-xl;
+      font-weight: 700;
+      color: var(--text-heading);
+      margin: 0;
+    }
+
+    .card-text {
+      color: var(--text-secondary);
+      font-size: $font-size-sm;
+      flex: 1;
+      margin: 0;
+    }
+
+    .techs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: $gap-sm;
+
+      span {
+        border: 1px solid rgba($primary, 0.55);
+        border-radius: 100px;
+        padding: 10px 14px;
+        background-color: rgba($primary, 0.1);
+        color: $primary;
+      }
+    }
+  }
+}

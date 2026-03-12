@@ -1,12 +1,14 @@
 <header>
   <div class="container">
     <nav>
-      <a [routerLink]="[]" fragment="home" class="logo">GM</a>
+      <a routerLink="/" fragment="home" class="logo">GM</a>
       <button
         type="button"
         class="theme-btn"
         (click)="themeService.toggleTheme()"
-        [attr.aria-label]="themeService.theme() === 'dark' ? 'Ativar modo claro' : 'Ativar modo escuro'"
+        [attr.aria-label]="
+          themeService.theme() === 'dark' ? 'Ativar modo claro' : 'Ativar modo escuro'
+        "
       >
         @if (themeService.theme() === 'dark') {
           <lucide-icon [size]="18" [img]="Sun"></lucide-icon>
@@ -19,12 +21,16 @@
       </button>
       <ul class="nav-links" [class.show]="!isMenuHidden()">
         @for (item of navItems; track item.fragment) {
-        <li>
-          <a [routerLink]="[]" [fragment]="item.fragment" [class.active]="isFragmentActive(item.fragment)"
-            (click)="hideMenu()">
-            {{ item.label }}
-          </a>
-        </li>
+          <li>
+            <a
+              routerLink="/"
+              [fragment]="item.fragment"
+              [class.active]="isFragmentActive(item.fragment)"
+              (click)="hideMenu()"
+            >
+              {{ item.label }}
+            </a>
+          </li>
         }
       </ul>
     </nav>

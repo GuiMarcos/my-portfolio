@@ -1,0 +1,21 @@
+<section class="all-projects">
+  <div class="container">
+    <h1>Todos os Projetos</h1>
+    <div class="projects-grid">
+      @for (project of allProjects(); track project.repositoryName) {
+        <a [href]="project.liveUrl" target="_blank" rel="noopener noreferrer" class="project-card">
+          <div class="image">
+            <img [src]="project.previewUrl" [alt]="project.title" (error)="hideImage($event)" />
+          </div>
+          <h3 class="card-title">{{ project.title }}</h3>
+          <p class="card-text">{{ project.description }}</p>
+          <div class="techs">
+            @for (tech of project.techs; track tech) {
+              <span>{{ tech }}</span>
+            }
+          </div>
+        </a>
+      }
+    </div>
+  </div>
+</section>

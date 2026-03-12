@@ -1,13 +1,9 @@
 export interface Project {
   title: string;
   description: string;
-  image: {
-    src: string;
-    alt: string;
-    width: number;
-    height: number;
-  };
+  previewUrl: string;
   techs: string[];
-  liveUrl?: string;
-  repoUrl?: string;
+  repositoryName: string;
+  language: string | null;
+  liveUrl: string;
 }

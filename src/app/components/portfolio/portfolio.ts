@@ -1,62 +1,47 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { NgOptimizedImage } from '@angular/common';
+import { ChangeDetectionStrategy, Component, computed, inject } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { Project } from '../../shared/models/portfolio.model';
+import { GitHubService } from '../../core/services/github.service';
 
 @Component({
   selector: 'app-portfolio',
-  imports: [NgOptimizedImage],
+  imports: [RouterLink],
   templateUrl: './portfolio.html',
   styleUrl: './portfolio.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Portfolio {
+  private readonly githubService = inject(GitHubService);
   readonly sectionTitle = 'Meus Projetos';
   readonly description =
     'Uma curadoria dos meus melhores trabalhos, refletindo minha expertise em desenvolvimento full stack, design responsivo e soluções escaláveis. Cada projeto representa desafios superados e aprendizados aplicados na prática.';
   readonly allProjectsLabel = 'Ver todos os projetos';
 
-  protected readonly projects: Project[] = [
-    {
-      title: 'Projeto 1',
-      description:
-        'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id ea ratione corporis enim cupiditate iste, fugit inventore minus nisi exercitationem?',
-      image: {
-        src: 'https://placehold.co/600x400',
-        alt: 'Foto do Projeto 1',
-        width: 600,
-        height: 400,
-      },
-      techs: ['React', 'TypeScript', 'Node.js'],
-      liveUrl: '',
-      repoUrl: '',
-    },
-    {
-      title: 'Projeto 2',
-      description:
-        'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id ea ratione corporis enim cupiditate iste, fugit inventore minus nisi exercitationem?',
-      image: {
-        src: 'https://placehold.co/600x400',
-        alt: 'Foto do Projeto 2',
-        width: 600,
-        height: 400,
-      },
-      techs: ['Angular', 'TypeScript', 'SCSS'],
-      liveUrl: '',
-      repoUrl: '',
-    },
-    {
-      title: 'Projeto 3',
-      description:
-        'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id ea ratione corporis enim cupiditate iste, fugit inventore minus nisi exercitationem?',
-      image: {
-        src: 'https://placehold.co/600x400',
-        alt: 'Foto do Projeto 3',
-        width: 600,
-        height: 400,
-      },
-      techs: ['Java', 'Spring Boot', 'PostgreSQL'],
-      liveUrl: '',
-      repoUrl: '',
-    },
-  ];
+  private readonly featuredRepoNames = ['StarbuckProj', 'CarSalesProj', 'ProjetoAnaliseDeSistemas'];
+
+  protected readonly projects = computed(() => {
+    const repos = this.githubService.getRepositoriesByNames(this.featuredRepoNames);
+    return repos
+      .map(
+        (repo) =>
+          ({
+            title: repo.name,
+            description: repo.description || 'Sem descrição',
+            previewUrl: this.githubService.getPreviewImageUrl(repo.name, repo.default_branch),
+            techs: repo.topics.length > 0 ? repo.topics : repo.language ? [repo.language] : [],
+            repositoryName: repo.name,
+            language: repo.language,
+            liveUrl: repo.html_url,
+          }) as Project,
+      )
+      .slice(0, 3);
+  });
+
+  protected readonly projectList = computed(() => this.projects());
+
+  protected hideImage(event: Event): void {
+    const img = event.target as HTMLImageElement;
+    const wrapper = img.closest('.image') as HTMLElement | null;
+    if (wrapper) wrapper.style.display = 'none';
+  }
 }
