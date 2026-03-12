@@ -37,8 +37,6 @@ export class Portfolio {
       .slice(0, 3);
   });
 
-  protected readonly projectList = computed(() => this.projects());
-
   protected hideImage(event: Event): void {
     const img = event.target as HTMLImageElement;
     const wrapper = img.closest('.image') as HTMLElement | null;

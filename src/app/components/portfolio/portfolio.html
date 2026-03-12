@@ -3,19 +3,19 @@
     <h2 class="title">{{ sectionTitle }}</h2>
     <p class="description">{{ description }}</p>
     <div class="cards">
-      @for (project of projects; track project.title) {
-      <div class="card">
-        <div class="image">
-          <img [ngSrc]="project.image.src" [alt]="project.image.alt" [width]="project.image.width" [height]="project.image.height">
+      @for (project of projects(); track project.title) {
+        <div class="card">
+          <div class="image">
+            <img [src]="project.previewUrl" [alt]="project.repositoryName + 'Preview'" />
+          </div>
+          <h4 class="card-title">{{ project.title }}</h4>
+          <p class="card-text">{{ project.description }}</p>
+          <div class="techs">
+            @for (tech of project.techs; track tech) {
+              <span>{{ tech }}</span>
+            }
+          </div>
         </div>
-        <h4 class="card-title">{{ project.title }}</h4>
-        <p class="card-text">{{ project.description }}</p>
-        <div class="techs">
-          @for (tech of project.techs; track tech) {
-          <span>{{ tech }}</span>
-          }
-        </div>
-      </div>
       }
     </div>
     <button class="all-projects-btn btn-outline">{{ allProjectsLabel }}</button>
