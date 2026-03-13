@@ -42,7 +42,7 @@ export class Portfolio {
             techs: repo.topics.length > 0 ? repo.topics : repo.language ? [repo.language] : [],
             repositoryName: repo.name,
             language: repo.language,
-            liveUrl: repo.html_url,
+            liveUrl: this.githubService.getRepositoryPublicUrl(repo),
           }) as Project,
       );
   });

@@ -1,15 +1,6 @@
 import { inject, Injectable, signal } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
-export interface GitHubRepo {
-  id: number;
-  name: string;
-  description: string | null;
-  language: string | null;
-  html_url: string;
-  topics: string[];
-  default_branch: string;
-}
+import { GitHubRepo } from '@shared/models/github.model';
 
 @Injectable({
   providedIn: 'root',
@@ -56,5 +47,23 @@ export class GitHubService {
 
   getPreviewImageUrl(repoName: string, branch = 'main'): string {
     return `https://raw.githubusercontent.com/${this.GITHUB_USERNAME}/${repoName}/${branch}/preview.png`;
+  }
+
+  getRepositoryPublicUrl(repo: GitHubRepo): string {
+    const homepage = this.normalizeExternalUrl(repo.homepage);
+    return homepage || repo.html_url;
+  }
+
+  private normalizeExternalUrl(url: string | null): string | null {
+    if (!url) return null;
+
+    const trimmed = url.trim();
+    if (!trimmed) return null;
+
+    if (trimmed.startsWith('http://') || trimmed.startsWith('https://')) {
+      return trimmed;
+    }
+
+    return `https://${trimmed}`;
   }
 }
