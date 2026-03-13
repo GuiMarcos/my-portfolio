@@ -10,6 +10,7 @@ import { GitHubService } from '../../core/services/github.service';
 })
 export class Portfolio {
   private readonly githubService = inject(GitHubService);
+  private readonly fallbackPreviewUrl = 'https://placehold.co/800x500/424144/f5f5f5?text=Preview+indisponivel';
   readonly sectionTitle = 'Meus Projetos';
   readonly description =
     'Uma curadoria dos meus melhores trabalhos, refletindo minha expertise em desenvolvimento full stack, design responsivo e soluções escaláveis. Cada projeto representa desafios superados e aprendizados aplicados na prática.';
@@ -35,9 +36,10 @@ export class Portfolio {
       .slice(0, 3);
   });
 
-  protected hideImage(event: Event): void {
+  protected onImageError(event: Event): void {
     const img = event.target as HTMLImageElement;
-    const wrapper = img.closest('.image') as HTMLElement | null;
-    if (wrapper) wrapper.style.display = 'none';
+    if (img.src === this.fallbackPreviewUrl) return;
+    img.src = this.fallbackPreviewUrl;
+    img.classList.add('is-fallback');
   }
 }
