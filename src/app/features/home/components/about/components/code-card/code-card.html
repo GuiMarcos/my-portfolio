@@ -1,0 +1,27 @@
+<article class="code-card" aria-label="Cartao com resumo em codigo">
+  <header class="code-card-header">
+    <div class="code-dots" aria-hidden="true">
+      <span class="dot dot-danger"></span>
+      <span class="dot dot-warning"></span>
+      <span class="dot dot-muted"></span>
+    </div>
+    <p class="code-file">
+      <span class="status" aria-hidden="true"></span>
+      {{ snippet().fileName }}
+    </p>
+  </header>
+
+  <div class="code-card-body">
+    <div class="code-block" aria-label="Bloco de codigo com apresentacao pessoal"><code>
+@for (line of snippet().lines; track line.number) {
+<span class="line" [class.line-gap]="line.gapBefore">
+  <span class="line-number">{{ line.number }}</span><span class="line-text" [class.indent]="line.indent">
+    @for (part of line.parts; track $index) {
+    <span [class]="part.cssClass || ''">{{ part.text }}</span>
+    }
+  </span>
+</span>
+}
+    </code></div>
+  </div>
+</article>

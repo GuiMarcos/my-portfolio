@@ -1,244 +1,60 @@
 @use '../../../../../../../styles/variables' as *;
 
 .journey {
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-    border-radius: 12px;
-    background-color: $primary;
-    color: $text-dark;
-    text-align: left;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border-radius: 12px;
+  background-color: $primary;
+  color: $text-dark;
+  text-align: left;
 
-    @media screen and (min-width: #{$breakpoint-md}) {
-        align-items: center;
-        flex-direction: row;
-        gap: $gap-lg;
-    }
+  @media screen and (min-width: #{$breakpoint-md}) {
+    align-items: center;
+    flex-direction: row;
+    gap: $gap-lg;
+  }
 }
 
 .box {
-    display: flex;
-    flex-direction: column;
-    gap: $gap-sm;
+  display: flex;
+  flex-direction: column;
+  gap: $gap-sm;
 }
 
 .subtitle {
-    font-size: $font-size-xl;
-    font-weight: bold;
-    color: $text-dark;
+  font-size: $font-size-xl;
+  font-weight: bold;
+  color: $text-dark;
 }
 
 .infos {
-    display: flex;
-    gap: $gap-xl;
-    padding-top: 1rem;
-    font-size: $font-size-sm;
+  display: flex;
+  gap: $gap-xl;
+  padding-top: 1rem;
+  font-size: $font-size-sm;
 
-    .highlight {
-        font-size: $font-size-xl;
-        font-weight: 800;
-    }
+  .highlight {
+    font-size: $font-size-xl;
+    font-weight: 800;
+  }
 }
 
 .image {
-    text-align: center;
+  text-align: center;
 
-    &.code-image {
-        width: 100%;
-        --code-accent: var(--primary);
-        --code-bg-start: color-mix(in srgb, var(--bg) 88%, #000 12%);
-        --code-bg-end: var(--bg-surface);
-        --code-border: color-mix(in srgb, var(--border-card) 85%, transparent);
-        --code-shadow: color-mix(in srgb, var(--bg) 55%, transparent);
-        --code-header-bg: color-mix(in srgb, var(--bg-surface) 90%, transparent);
-        --code-text: var(--text-heading);
-        --code-muted: var(--text);
-        --code-line-number: color-mix(in srgb, var(--text) 65%, transparent);
-        --code-string: color-mix(in srgb, var(--primary) 62%, var(--text-heading));
-        --code-glare: color-mix(in srgb, var(--text-heading) 24%, transparent);
-    }
-}
-
-.code-card {
-    position: relative;
-    width: min(100%, 470px);
-    margin: 0 auto;
-    border: 1px solid var(--code-border);
-    border-radius: 24px;
-    overflow: hidden;
-    background: linear-gradient(135deg, var(--code-bg-start) 0%, var(--code-bg-end) 100%);
-    color: var(--code-text);
-    box-shadow: 0 20px 40px var(--code-shadow);
-    transition: transform 0.4s cubic-bezier(0.03, 0.98, 0.52, 0.99);
-
-    &:hover {
-        transform: perspective(1000px) rotateX(2deg) rotateY(-3deg) scale3d(1.01, 1.01, 1.01);
-    }
-
-    &::after {
-        content: '';
-        position: absolute;
-        inset: -35% auto auto -50%;
-        width: 200%;
-        height: 130%;
-        opacity: 0;
-        transform: rotate(12deg);
-        background: linear-gradient(0deg, transparent 0%, var(--code-glare) 100%);
-        transition: opacity 0.4s cubic-bezier(0.03, 0.98, 0.52, 0.99);
-        pointer-events: none;
-    }
-
-    &:hover::after {
-        opacity: 1;
-    }
-}
-
-.code-card-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: $gap-md;
-    padding: 1rem 1.5rem;
-    border-bottom: 1px solid color-mix(in srgb, var(--code-border) 85%, transparent);
-    background-color: var(--code-header-bg);
-}
-
-.code-dots {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-
-    .dot {
-        width: 0.7rem;
-        aspect-ratio: 1;
-        border-radius: 50%;
-
-        &.dot-danger {
-            background-color: color-mix(in srgb, var(--code-accent) 86%, #ff4f4f);
-        }
-
-        &.dot-warning {
-            background-color: color-mix(in srgb, var(--code-accent) 58%, transparent);
-        }
-
-        &.dot-muted {
-            background-color: color-mix(in srgb, var(--code-accent) 28%, transparent);
-        }
-    }
-}
-
-.code-file {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin: 0;
-    color: var(--code-muted);
-    font-size: $font-size-sm;
-    font-family: 'JetBrains Mono', monospace;
-
-    .status {
-        width: 0.5rem;
-        aspect-ratio: 1;
-        border-radius: 50%;
-        background-color: var(--code-accent);
-        animation: pulse 1.6s ease-in-out infinite;
-    }
-}
-
-.code-card-body {
-    max-height: 250px;
-    overflow: auto;
-    padding: 0.95rem 1rem;
-
-    @media screen and (min-width: #{$breakpoint-md}) {
-        padding: 1.2rem 1.3rem;
-    }
-}
-
-.code-block {
-    margin: 0;
-    white-space: normal;
-}
-
-code {
-    display: block;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: clamp(0.69rem, 1.5vw, 0.91rem);
-    line-height: 1.35;
-}
-
-.line {
-    display: grid;
-    grid-template-columns: 2ch 1fr;
-    gap: 1rem;
-    align-items: baseline;
-
-    &.line-gap {
-        margin-top: 0.65rem;
-    }
-}
-
-.line-number {
-    color: var(--code-line-number);
-    font-style: italic;
-    text-align: right;
-}
-
-.line-text {
-    text-align: left;
-
-    &.indent {
-        padding-left: 1rem;
-    }
-}
-
-.keyword,
-.token {
-    color: var(--code-accent);
-}
-
-.property {
-    color: var(--code-text);
-}
-
-.string {
-    color: var(--code-string);
-}
-
-.boolean {
-    color: color-mix(in srgb, var(--code-accent) 80%, var(--code-bg-start));
-}
-
-.method {
-    color: var(--code-text);
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .code-card {
-        transition: none;
-        transform: none;
-
-        &:hover {
-            transform: none;
-        }
-
-        &::after,
-        &:hover::after {
-            opacity: 0;
-        }
-    }
-}
-
-@keyframes pulse {
-
-    0%,
-    100% {
-        opacity: 0.45;
-        transform: scale(0.95);
-    }
-
-    50% {
-        opacity: 1;
-        transform: scale(1);
-    }
+  &.code-image {
+    width: 100%;
+    --code-accent: var(--primary);
+    --code-bg-start: color-mix(in srgb, var(--bg) 88%, #000 12%);
+    --code-bg-end: var(--bg-surface);
+    --code-border: color-mix(in srgb, var(--border-card) 85%, transparent);
+    --code-shadow: color-mix(in srgb, var(--bg) 55%, transparent);
+    --code-header-bg: color-mix(in srgb, var(--bg-surface) 90%, transparent);
+    --code-text: var(--text-heading);
+    --code-muted: var(--text);
+    --code-line-number: color-mix(in srgb, var(--text) 65%, transparent);
+    --code-string: color-mix(in srgb, var(--primary) 62%, var(--text-heading));
+    --code-glare: color-mix(in srgb, var(--text-heading) 24%, transparent);
+  }
 }
