@@ -11,8 +11,6 @@ import {
     viewChildren,
 } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { JourneyStep } from '@shared/models/about.model';
 
 @Component({
@@ -27,10 +25,26 @@ export class Timeline implements AfterViewInit, OnDestroy {
     private readonly platformId = inject(PLATFORM_ID);
     private readonly timelineContainer = viewChild<ElementRef<HTMLElement>>('timelineContainer');
     private readonly stepElements = viewChildren<ElementRef<HTMLElement>>('stepElement');
-    private animationContext?: gsap.Context;
+    private animationContext?: { revert(): void };
+    private destroyed = false;
 
     ngAfterViewInit(): void {
         if (!isPlatformBrowser(this.platformId)) return;
+        void this.initializeAnimations();
+    }
+
+    ngOnDestroy(): void {
+        this.destroyed = true;
+        this.animationContext?.revert();
+    }
+
+    private async initializeAnimations(): Promise<void> {
+        const [{ gsap }, { ScrollTrigger }] = await Promise.all([
+            import('gsap'),
+            import('gsap/ScrollTrigger'),
+        ]);
+
+        if (this.destroyed) return;
 
         const container = this.timelineContainer()?.nativeElement;
         const elements = this.stepElements().map((el) => el.nativeElement);
@@ -96,9 +110,5 @@ export class Timeline implements AfterViewInit, OnDestroy {
                 }
             }
         }, container);
-    }
-
-    ngOnDestroy(): void {
-        this.animationContext?.revert();
     }
 }

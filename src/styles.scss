@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @use 'ngx-toastr/toastr';
 @use 'scss-reset';
+@use 'swiper/css';
 @use './styles/colours' as colours;
 @use './styles/variables' as *;
 @use './styles/mixins' as *;
