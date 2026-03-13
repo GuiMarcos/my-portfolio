@@ -19,7 +19,7 @@ export class Hero {
   readonly ArrowDown = ArrowDown;
 
   readonly content = {
-    photo: { src: 'https://placehold.co/800x800', alt: 'Foto de Guilherme' },
+    photo: { src: 'https://github.com/GuiMarcos.png?size=800', alt: 'Foto de Guilherme' },
     greeting: 'Olá, eu sou',
     name: 'Guilherme Marcos',
     jobTitle: 'Desenvolvedor Full Stack',
