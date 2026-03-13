@@ -24,6 +24,19 @@
             </div>
             }
           </div>
+          <div #journeyTimelineElement class="timeline" aria-label="Linha do tempo da minha jornada">
+            <span class="timeline-progress" aria-hidden="true"></span>
+            @for (step of journeySteps; track step.title; let stepIndex = $index) {
+            <article #journeyStepElement class="timeline-item">
+              <span class="timeline-node" aria-hidden="true"></span>
+              <div class="timeline-content">
+                <p class="timeline-period">{{ step.period }}</p>
+                <h5 class="timeline-title">{{ step.title }}</h5>
+                <p class="timeline-description">{{ step.description }}</p>
+              </div>
+            </article>
+            }
+          </div>
         </div>
       </div>
       <div class="image code-image">
