@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, input } from '@angular/core';
-import { CodeSnippet } from '../../models/code-snippet.model';
+import { CodeSnippet } from '@shared/models/about.model';
 
 @Component({
   selector: 'app-code-card',

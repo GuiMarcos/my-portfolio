@@ -1,8 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Timeline } from '../timeline/timeline';
 import { CodeCard } from '../code-card/code-card';
-import { AboutStat, JourneyStep } from '@shared/models/about.model';
-import { CodeSnippet } from '../../models/code-snippet.model';
+import { AboutStat, CodeSnippet, JourneyStep } from '@shared/models/about.model';
 
 @Component({
   selector: 'app-journey-banner',
