@@ -106,14 +106,17 @@
     .techs {
       display: flex;
       flex-wrap: wrap;
-      gap: $gap-sm;
+      gap: $gap-xs;
+      align-self: flex-end;
 
       span {
+        font-size: $font-size-xs;
+        padding: 8px 10px;
         border: 1px solid rgba($primary, 0.55);
         border-radius: 100px;
-        padding: 10px 14px;
         background-color: rgba($primary, 0.1);
         color: $primary;
+        text-transform: uppercase;
       }
     }
   }
