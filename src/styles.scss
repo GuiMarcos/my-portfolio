@@ -84,10 +84,6 @@ section>.container.content {
   border-color: var(--border-card);
 }
 
-.carousel {
-  @include carousel-base;
-}
-
 .card-link {
   text-decoration: none;
   color: inherit;

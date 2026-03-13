@@ -12,3 +12,9 @@ export interface AboutStat {
   label: string;
   value: string;
 }
+
+export interface JourneyStep {
+  period: string;
+  title: string;
+  description: string;
+}

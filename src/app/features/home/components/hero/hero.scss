@@ -1,0 +1,143 @@
+@use '../../../../../styles/variables' as *;
+
+@keyframes arrow-bounce {
+
+  0%,
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+
+  50% {
+    transform: translateX(-50%) translateY(8px);
+  }
+}
+
+.content {
+  position: relative;
+  min-height: inherit;
+  padding-bottom: 3.25rem;
+
+  @media screen and (min-width: #{$breakpoint-md}) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: minmax(0, 1fr);
+    align-items: center;
+  }
+
+  .image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @media screen and (min-width: #{$breakpoint-md}) {
+      order: 1;
+    }
+
+    img {
+      display: block;
+      height: auto;
+      border-radius: 16px;
+      border: solid 1px var(--primary);
+
+      @media screen and (min-width: #{$breakpoint-lg}) {
+        width: $hero-image-size-lg;
+        height: auto;
+      }
+    }
+  }
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: space-evenly;
+
+  @media screen and (min-width: #{$breakpoint-md}) {
+    order: 0;
+    gap: $gap-md;
+  }
+
+  .text {
+    display: flex;
+    flex-direction: column;
+    gap: $gap-md;
+
+    .main {
+      font-size: $font-size-xl;
+      font-weight: bold;
+      color: var(--text-heading);
+
+      @media screen and (min-width: #{$breakpoint-lg}) {
+        font-size: $font-size-3xl;
+      }
+
+      .name {
+        display: block;
+        color: var(--primary);
+      }
+    }
+
+    .job {
+      font-size: $font-size-lg;
+      color: var(--primary);
+
+      @media screen and (min-width: #{$breakpoint-lg}) {
+        font-size: $font-size-2xl;
+      }
+    }
+  }
+
+  .buttons {
+    display: flex;
+    gap: $gap-sm;
+  }
+
+  .links {
+    display: flex;
+    gap: $gap-sm;
+
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      background-color: $secondary;
+      color: $text-light;
+      cursor: pointer;
+
+      &:hover {
+        background-color: var(--primary);
+        border-radius: 10px;
+      }
+    }
+  }
+}
+
+.arrow {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  color: var(--primary);
+  transform: translateX(-50%);
+  animation: arrow-bounce 1.4s ease-in-out infinite;
+  cursor: pointer;
+
+  &:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 4px;
+    border-radius: 8px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
+}

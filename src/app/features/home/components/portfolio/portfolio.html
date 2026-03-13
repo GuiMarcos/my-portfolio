@@ -1,0 +1,8 @@
+<section id="portfolio" class="portfolio-section">
+  <div class="container content">
+    <h2 class="title">{{ sectionTitle }}</h2>
+    <p class="description">{{ description }}</p>
+    <app-carousel [projects]="projects()"></app-carousel>
+    <button class="all-projects-btn btn-outline" type="button" routerLink="/allProjects">{{ allProjectsLabel }}</button>
+  </div>
+</section>

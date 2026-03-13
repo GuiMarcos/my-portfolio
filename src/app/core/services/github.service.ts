@@ -54,7 +54,7 @@ export class GitHubService {
     return this.repositories().filter((repo) => !repo.name.startsWith('.'));
   }
 
-  getPreviewImageUrl(repoName: string, branch: string = 'main'): string {
+  getPreviewImageUrl(repoName: string, branch = 'main'): string {
     return `https://raw.githubusercontent.com/${this.GITHUB_USERNAME}/${repoName}/${branch}/preview.png`;
   }
 }

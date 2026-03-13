@@ -1,0 +1,166 @@
+@use '../../../../../styles/variables' as *;
+
+.content {
+  align-items: center;
+  justify-content: space-evenly;
+  gap: $gap-lg;
+  min-height: inherit;
+  text-align: center;
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: $gap-lg;
+    width: 100%;
+
+    @media screen and (min-width: #{$breakpoint-lg}) {
+      flex-direction: row;
+      align-items: stretch;
+      justify-content: center;
+    }
+
+    .infos {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: $gap-lg;
+      width: 100%;
+      max-width: 420px;
+
+      .subtitle {
+        font-size: $font-size-lg;
+        font-weight: bold;
+        color: var(--text-heading);
+
+        @media screen and (min-width: #{$breakpoint-lg}) {
+          font-size: $font-size-xl;
+        }
+      }
+
+      .cards {
+        display: flex;
+        flex-direction: column;
+        gap: $gap-lg;
+        width: 100%;
+
+        .card {
+          flex-direction: row;
+          justify-content: start;
+          gap: $gap-sm;
+          min-height: auto;
+          max-width: none;
+          text-align: left;
+          background-color: var(--bg-surface);
+          border-color: var(--border-card);
+
+          .card-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: color-mix(in srgb, var(--primary) 20%, transparent);
+            color: var(--primary);
+          }
+
+          .card-text {
+            font-size: $font-size-sm;
+
+            @media screen and (min-width: #{$breakpoint-md}) {
+              font-size: $font-size-md;
+            }
+          }
+        }
+      }
+
+      .banner {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        border-radius: 12px;
+        padding: 1rem 1rem;
+        background-color: $primary;
+        color: $text-dark;
+
+        @media screen and (min-width: #{$breakpoint-lg}) {
+          gap: $gap-sm;
+        }
+
+        .banner-title {
+          font-weight: bold;
+
+          @media screen and (min-width: #{$breakpoint-lg}) {
+            font-size: $font-size-lg;
+          }
+        }
+
+        .banner-text {
+          font-size: $font-size-sm;
+
+          @media screen and (min-width: #{$breakpoint-lg}) {
+            font-size: $font-size-md;
+          }
+        }
+      }
+    }
+
+    .contact-box {
+      align-items: stretch;
+      justify-content: flex-start;
+      gap: $gap-sm;
+      width: 100%;
+      max-width: 580px;
+      border-radius: 14px;
+      text-align: left;
+      background-color: var(--bg-surface);
+      border-color: var(--border-card);
+
+      .card-title {
+        font-size: $font-size-xl;
+        font-weight: 700;
+        color: var(--text-heading);
+      }
+
+      .input-box {
+        display: flex;
+        flex-direction: column;
+        gap: $gap-sm;
+
+        label {
+          font-size: $font-size-md;
+          color: var(--text-heading);
+        }
+
+        input,
+        textarea {
+          width: 100%;
+          padding: 0.9rem 1rem;
+          border: 1px solid var(--input-border);
+          border-radius: 10px;
+          outline: none;
+          background-color: var(--input-bg);
+          font-family: inherit;
+          font-size: $font-size-md;
+          color: var(--input-color);
+          transition: border-color .2s ease, box-shadow .2s ease;
+
+          &:focus {
+            border-color: rgba($primary, 0.75);
+            box-shadow: 0 0 0 2px rgba($primary, 0.2);
+          }
+        }
+
+        textarea {
+          min-height: 170px;
+          resize: vertical;
+        }
+      }
+
+      .btn-solid {
+        gap: $gap-sm;
+      }
+    }
+  }
+}

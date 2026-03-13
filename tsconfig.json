@@ -16,8 +16,11 @@
     "target": "ES2022",
     "module": "preserve",
     "paths": {
-      "@components/*": [
-        "src/app/components/*"
+      "@features/*": [
+        "src/app/features/*"
+      ],
+      "@layout/*": [
+        "src/app/layout/*"
       ],
       "@core/*": [
         "src/app/core/*"
