@@ -1,9 +1,11 @@
 import { ChangeDetectionStrategy, Component, computed, inject } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { Project } from '../../shared/models/portfolio.model';
 import { GitHubService } from '../../core/services/github.service';
 
 @Component({
   selector: 'app-portfolio',
+  imports: [RouterLink],
   templateUrl: './portfolio.html',
   styleUrl: './portfolio.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

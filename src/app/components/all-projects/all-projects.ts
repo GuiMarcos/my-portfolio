@@ -11,6 +11,7 @@ import { Project } from '../../shared/models/portfolio.model';
 })
 export class AllProjectsComponent {
   private readonly githubService = inject(GitHubService);
+  private readonly fallbackPreviewUrl = 'https://placehold.co/800x500/424144/f5f5f5?text=Preview+indisponivel';
 
   protected readonly allProjects = computed(() =>
     this.githubService.getAllRepositories().map(
@@ -27,9 +28,10 @@ export class AllProjectsComponent {
     ),
   );
 
-  protected hideImage(event: Event): void {
+  protected onImageError(event: Event): void {
     const img = event.target as HTMLImageElement;
-    const wrapper = img.closest('.image') as HTMLElement | null;
-    if (wrapper) wrapper.style.display = 'none';
+    if (img.src === this.fallbackPreviewUrl) return;
+    img.src = this.fallbackPreviewUrl;
+    img.classList.add('is-fallback');
   }
 }

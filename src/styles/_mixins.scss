@@ -63,6 +63,7 @@
   background-color: $background;
   border-radius: $radius;
   border: 1px solid $border-color;
+  --card-padding: #{$padding};
   padding: $padding;
   display: flex;
   flex-direction: column;
@@ -96,5 +97,30 @@
     color: var(--text);
     overflow-wrap: anywhere;
     word-break: break-word;
+  }
+
+  .image {
+    align-self: stretch;
+    max-width: none;
+    inline-size: calc(100% + (var(--card-padding) * 2));
+    margin: calc(var(--card-padding) * -1) calc(var(--card-padding) * -1) 0;
+    aspect-ratio: var(--card-image-ratio, 16 / 10);
+    overflow: hidden;
+    border-radius: inherit;
+    background-color: var(--bg-surface);
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      border-radius: inherit;
+      object-fit: var(--card-image-fit, fill);
+      object-position: center;
+
+      &.is-fallback {
+        object-fit: contain;
+        padding: 1rem;
+      }
+    }
   }
 }
