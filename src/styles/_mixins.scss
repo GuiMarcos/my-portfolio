@@ -28,6 +28,11 @@
   cursor: pointer;
   transition: all 0.2s ease;
   max-width: 100%;
+
+  &:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 3px;
+  }
 }
 
 @mixin button-solid($background: $primary, $text-color: $text-dark) {
