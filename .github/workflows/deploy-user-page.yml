@@ -37,7 +37,7 @@ jobs:
           EOF
 
       - name: Build app for user page root
-        run: pnpm run build -- --base-href /
+        run: pnpm exec ng build --base-href /
 
       - name: Add SPA fallback for GitHub Pages
         run: cp dist/my-portfolio/browser/index.html dist/my-portfolio/browser/404.html
