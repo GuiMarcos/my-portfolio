@@ -13,7 +13,9 @@
         <button type="button" class="projects-btn btn-solid" (click)="navigateToFragment('portfolio')">
           {{ content.buttons.projects }}
         </button>
-        <button class="contact-btn btn-outline">{{ content.buttons.contact }}</button>
+        <button type="button" class="contact-btn btn-outline" (click)="navigateToFragment('contact')">
+          {{ content.buttons.contact }}
+        </button>
       </div>
       <div class="links">
         <a [href]="content.links.github" target="_blank" rel="noopener noreferrer">
