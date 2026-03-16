@@ -1,64 +1,98 @@
-# MyPortfolio
+# My Portfolio
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.0.
+[![Deploy to guimarcos.github.io](https://github.com/GuiMarcos/my-portfolio/actions/workflows/deploy-user-page.yml/badge.svg?branch=main)](https://github.com/GuiMarcos/my-portfolio/actions/workflows/deploy-user-page.yml)
 
-## Development server
+Portfolio built with Angular 21.
 
-To start a local development server, run:
+Live URL: `https://guimarcos.github.io`
 
-```bash
-ng serve
-```
+## Stack
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+- Angular 21
+- TypeScript
+- SCSS
+- pnpm
+- Vitest
 
-## Code scaffolding
+## Local Setup
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+1. Install dependencies:
 
 ```bash
-ng generate --help
+pnpm install
 ```
 
-## Building
+2. Create the local environment file:
 
-To build the project run:
+```ts
+// src/environments/environment.local.ts
+export const environment = {
+	contactForm: {
+		formspreeEndpoint: 'https://formspree.io/f/your-form-id',
+	},
+};
+```
+
+3. Start development server:
 
 ```bash
-ng build
+pnpm start
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+App runs at `http://localhost:4200/`.
 
-## Running unit tests
+## Environment Strategy
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+- `src/environments/environment.ts`: tracked file with safe defaults.
+- `src/environments/environment.local.ts`: local/secret values (gitignored).
+- Production build uses file replacement from `environment.ts` to `environment.local.ts`.
+
+## Scripts
 
 ```bash
-ng test
+pnpm start
+pnpm build
+pnpm test
+pnpm lint
 ```
 
-## Running end-to-end tests
+## Build
 
-For end-to-end (e2e) testing, run:
+- Production (default config):
 
 ```bash
-ng e2e
+pnpm build
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+- Development config:
 
-## Additional Resources
+```bash
+pnpm build -- --configuration development
+```
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## Deploy (Cross-Repo GitHub Pages)
 
-## Deps
-https://github.com/scttcper/ngx-toastr - ngx-toastr
-https://lucide.dev/guide/packages/lucide-angular - Lucile
-https://github.com/frontend-layers/scss-reset - Scss-reset
+This repository deploys to `guimarcos/guimarcos.github.io` via:
+
+- `.github/workflows/deploy-user-page.yml`
+
+### Required Secrets (in `GuiMarcos/my-portfolio`)
+
+- `GH_PAGES_PAT`: Fine-grained PAT with `Contents: Read and write` on `guimarcos.github.io`.
+- `FORMSPREE_ENDPOINT`: Formspree endpoint used during CI build.
+
+### Trigger
+
+- Push to `main`, or run workflow manually in `Actions`.
+
+### Output
+
+- Angular build output from `dist/my-portfolio/browser` is published to `guimarcos.github.io` branch `main`.
+- `404.html` is generated from `index.html` for SPA fallback.
+
+## Useful Links
+
+- Angular CLI docs: `https://angular.dev/tools/cli`
+- ngx-toastr: `https://github.com/scttcper/ngx-toastr`
+- lucide-angular: `https://lucide.dev/guide/packages/lucide-angular`
+- scss-reset: `https://github.com/frontend-layers/scss-reset`

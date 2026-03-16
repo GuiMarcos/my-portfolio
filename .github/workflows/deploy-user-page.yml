@@ -1,0 +1,54 @@
+name: Deploy to guimarcos.github.io
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout source repository
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Create production environment file
+        run: |
+          cat > src/environments/environment.local.ts <<'EOF'
+          export const environment = {
+            contactForm: {
+              formspreeEndpoint: '${{ secrets.FORMSPREE_ENDPOINT }}',
+            },
+          };
+          EOF
+
+      - name: Build app for user page root
+        run: pnpm run build -- --base-href /
+
+      - name: Add SPA fallback for GitHub Pages
+        run: cp dist/my-portfolio/browser/index.html dist/my-portfolio/browser/404.html
+
+      - name: Deploy to guimarcos.github.io
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          personal_token: ${{ secrets.GH_PAGES_PAT }}
+          external_repository: guimarcos/guimarcos.github.io
+          publish_branch: main
+          publish_dir: dist/my-portfolio/browser
+          force_orphan: true
