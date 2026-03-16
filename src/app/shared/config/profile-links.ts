@@ -9,4 +9,5 @@ export const profileLinks = {
 
 export const profileUrls = {
   mailto: `mailto:${profileLinks.email}`,
+  whatsapp: `https://wa.me/${profileLinks.phone.replace(/\D/g, '')}`,
 } as const;

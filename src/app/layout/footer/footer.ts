@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { LucideAngularModule, Github, Linkedin, Mail } from 'lucide-angular';
+import { LucideAngularModule, Github, Linkedin, Mail, MessageCircle } from 'lucide-angular';
 import { profileLinks, profileUrls } from '@shared/config/profile-links';
 import { SocialLink } from '@shared/models/footer.model';
 import { NavigationLink } from '@shared/models/navigation-link.model';
@@ -29,6 +29,7 @@ export class Footer {
     { icon: Github, url: profileLinks.github, ariaLabel: 'GitHub' },
     { icon: Linkedin, url: profileLinks.linkedin, ariaLabel: 'LinkedIn' },
     { icon: Mail, url: profileUrls.mailto, ariaLabel: 'Email' },
+    { icon: MessageCircle, url: profileUrls.whatsapp, ariaLabel: 'Whatsapp' },
   ];
 
   protected readonly navLinks: NavigationLink[] = [

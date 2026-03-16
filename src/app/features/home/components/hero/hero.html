@@ -18,15 +18,11 @@
         </button>
       </div>
       <div class="links">
-        <a [href]="content.links.github" target="_blank" rel="noopener noreferrer" aria-label="Abrir GitHub">
-          <lucide-icon [size]="20" [img]="Github"></lucide-icon>
+        @for (social of content.socialLinks; track social.ariaLabel) {
+        <a [href]="social.url" target="_blank" rel="noopener noreferrer" [attr.aria-label]="social.ariaLabel">
+          <lucide-icon [img]="social.icon" [size]="20"></lucide-icon>
         </a>
-        <a [href]="content.links.linkedin" target="_blank" rel="noopener noreferrer" aria-label="Abrir LinkedIn">
-          <lucide-icon [size]="20" [img]="Linkedin"></lucide-icon>
-        </a>
-        <a [href]="content.links.email" target="_blank" rel="noopener noreferrer" aria-label="Enviar email">
-          <lucide-icon [size]="20" [img]="Mail"></lucide-icon>
-        </a>
+        }
       </div>
     </div>
     <button type="button" class="arrow" (click)="navigateToFragment('about')" aria-label="Ir para seção Sobre Mim">

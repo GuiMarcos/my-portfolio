@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
-import { LucideAngularModule, Github, Linkedin, Mail, ArrowDown } from 'lucide-angular';
+import { LucideAngularModule, Github, Linkedin, Mail, ArrowDown, MessageCircle } from 'lucide-angular';
 import { NgOptimizedImage } from '@angular/common';
 import { Router } from '@angular/router';
 import { githubUsername, profileLinks, profileUrls } from '@shared/config/profile-links';
@@ -14,9 +14,6 @@ import { githubUsername, profileLinks, profileUrls } from '@shared/config/profil
 export class Hero {
   private readonly router = inject(Router);
 
-  readonly Github = Github;
-  readonly Linkedin = Linkedin;
-  readonly Mail = Mail;
   readonly ArrowDown = ArrowDown;
 
   readonly content = {
@@ -30,11 +27,12 @@ export class Hero {
       projects: 'Ver Projetos',
       contact: 'Entre em Contato',
     },
-    links: {
-      github: profileLinks.github,
-      linkedin: profileLinks.linkedin,
-      email: profileUrls.mailto,
-    },
+    socialLinks: [
+      { icon: Github, url: profileLinks.github, ariaLabel: 'GitHub' },
+      { icon: Linkedin, url: profileLinks.linkedin, ariaLabel: 'LinkedIn' },
+      { icon: Mail, url: profileUrls.mailto, ariaLabel: 'Email' },
+      { icon: MessageCircle, url: profileUrls.whatsapp, ariaLabel: 'Whatsapp' },
+    ]
   };
 
   navigateToFragment(fragment: string): void {
