@@ -1,13 +1,16 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable, signal } from '@angular/core';
 import { ContactFormPayload } from '@shared/models/contact.model';
+import { environment } from '../../../environments/environment.production';
+import { environmentLocal } from '../../../environments/environment.local';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ContactService {
   private readonly http = inject(HttpClient);
-  private readonly formspreeEndpoint = '';
+  private readonly formspreeEndpoint =
+    environmentLocal.contactForm.formspreeEndpoint || environment.contactForm.formspreeEndpoint;
 
   readonly loading = signal(false);
   readonly success = signal(false);
