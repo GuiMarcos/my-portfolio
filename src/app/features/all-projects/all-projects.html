@@ -3,9 +3,9 @@
     <h1>Todos os Projetos</h1>
     <div class="projects-grid">
       @for (project of allProjects(); track project.repositoryName) {
-      <a [href]="project.liveUrl" target="_blank" rel="noopener noreferrer" class="card card-link">
+      <a [href]="project.liveUrl" target="_blank" rel="noopener noreferrer" class="card card-link project-card">
         <div class="image">
-          <img [src]="project.previewUrl" [alt]="project.title" loading="lazy" decoding="async"
+          <img [src]="project.previewUrl" [alt]="project.title" loading="lazy" decoding="async" width="640" height="400"
             (error)="onImageError($event)" />
         </div>
         <h3 class="card-title" [title]="project.title">{{ project.title }}</h3>

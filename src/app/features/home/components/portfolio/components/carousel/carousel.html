@@ -1,31 +1,32 @@
 <div class="carousel" aria-label="Carrossel de projetos em destaque">
-    <button class="carousel-control" type="button" aria-label="Projeto anterior" (click)="slidePrev()"
-        [disabled]="!canGoPrev()">
-        &#10094;
-    </button>
+  <button class="carousel-control" type="button" aria-label="Projeto anterior" (click)="slidePrev()"
+    [disabled]="!canGoPrev()">
+    &#10094;
+  </button>
 
-    <swiper-container #swiperRef init="false" class="carousel-swiper">
-        @for (project of projects(); track project.repositoryName) {
-        <swiper-slide class="slide">
-            <a class="card card-link" [href]="project.liveUrl" target="_blank" rel="noopener noreferrer">
-                <div class="image">
-                    <img [src]="project.previewUrl" [alt]="project.repositoryName + ' preview'" loading="lazy"
-                        decoding="async" (error)="onImageError($event)" />
-                </div>
-                <h4 class="card-title" [title]="project.title">{{ project.title }}</h4>
-                <p class="card-text">{{ project.description }}</p>
-                <div class="techs">
-                    @for (tech of project.techs; track tech) {
-                    <span>{{ tech }}</span>
-                    }
-                </div>
-            </a>
-        </swiper-slide>
-        }
-    </swiper-container>
+  <swiper-container #swiperRef init="false" class="carousel-swiper">
+    @for (project of projects(); track project.repositoryName; let index = $index) {
+    <swiper-slide class="slide">
+      <a class="card card-link project-card" [href]="project.liveUrl" target="_blank" rel="noopener noreferrer">
+        <div class="image">
+          <img [src]="project.previewUrl" [alt]="project.repositoryName + ' preview'"
+            [attr.loading]="index === 0 ? 'eager' : 'lazy'" [attr.fetchpriority]="index === 0 ? 'high' : 'auto'"
+            decoding="async" width="640" height="400" (error)="onImageError($event)" />
+        </div>
+        <h4 class="card-title" [title]="project.title">{{ project.title }}</h4>
+        <p class="card-text">{{ project.description }}</p>
+        <div class="techs">
+          @for (tech of project.techs; track tech) {
+          <span>{{ tech }}</span>
+          }
+        </div>
+      </a>
+    </swiper-slide>
+    }
+  </swiper-container>
 
-    <button class="carousel-control" type="button" aria-label="Proximo projeto" (click)="slideNext()"
-        [disabled]="!canGoNext()">
-        &#10095;
-    </button>
+  <button class="carousel-control" type="button" aria-label="Proximo projeto" (click)="slideNext()"
+    [disabled]="!canGoNext()">
+    &#10095;
+  </button>
 </div>

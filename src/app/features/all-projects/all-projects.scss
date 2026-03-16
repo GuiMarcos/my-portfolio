@@ -27,33 +27,6 @@
     max-width: 340px;
     min-height: 300px;
     --card-image-fit: fill;
-    justify-content: flex-start;
-    gap: $gap-lg;
-
-    .card-title {
-      align-self: start;
-    }
-
-    .card-text {
-      font-size: $font-size-sm;
-      flex: 1;
-    }
-
-    .techs {
-      display: flex;
-      flex-wrap: wrap;
-      gap: $gap-xs;
-      align-self: flex-end;
-
-      span {
-        font-size: $font-size-xs;
-        border: 1px solid rgba($primary, 0.55);
-        border-radius: 100px;
-        padding: 8px 10px;
-        background-color: rgba($primary, 0.1);
-        color: $primary;
-        text-transform: uppercase;
-      }
-    }
+    --card-gap: #{$gap-lg};
   }
 }
