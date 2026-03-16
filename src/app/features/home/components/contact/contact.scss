@@ -150,16 +150,52 @@
             border-color: rgba($primary, 0.75);
             box-shadow: 0 0 0 2px rgba($primary, 0.2);
           }
+
+          &.input-error {
+            border-color: #b44d4d;
+            box-shadow: 0 0 0 2px rgba(#b44d4d, 0.18);
+          }
         }
 
         textarea {
           min-height: 170px;
           resize: vertical;
         }
+
+        .field-error {
+          font-size: $font-size-sm;
+          color: #b44d4d;
+        }
+      }
+
+      .honeypot-field {
+        position: absolute;
+        left: -10000px;
+        top: auto;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
       }
 
       .btn-solid {
         gap: $gap-sm;
+
+        &:disabled {
+          opacity: 0.65;
+          cursor: not-allowed;
+        }
+      }
+
+      .submit-feedback {
+        font-size: $font-size-sm;
+      }
+
+      .submit-feedback-error {
+        color: #b44d4d;
+      }
+
+      .submit-feedback-success {
+        color: var(--primary);
       }
     }
   }

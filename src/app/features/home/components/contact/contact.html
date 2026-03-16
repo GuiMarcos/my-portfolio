@@ -23,20 +23,58 @@
           <p class="banner-text">{{ banner.text }}</p>
         </div>
       </div>
-      <div class="contact-box card">
-        <h4 class="card-title">{{ form.title }}</h4>
-        @for (field of form.fields; track field.id) {
+      <form class="contact-box card" [formGroup]="contactForm" (ngSubmit)="onSubmit()" novalidate>
+        <h4 class="card-title">{{ formCopy.title }}</h4>
+        @for (field of formCopy.fields; track field.id) {
         <div class="input-box">
           <label [for]="field.id">{{ field.label }}</label>
-          <input [type]="field.type" [name]="field.name" [id]="field.id" [attr.autocomplete]="field.autocomplete ?? null">
+          <input [id]="field.id" [type]="field.type" [name]="field.name" [formControlName]="field.name"
+            [attr.autocomplete]="field.autocomplete ?? null"
+            [attr.aria-invalid]="showFieldError(field.name) ? 'true' : 'false'"
+            [attr.aria-describedby]="showFieldError(field.name) ? field.id + '-error' : null"
+            [class.input-error]="showFieldError(field.name)">
+          @if (showFieldError(field.name)) {
+          <p class="field-error" [id]="field.id + '-error'">{{ getFieldError(field.name, field.label) }}</p>
+          }
         </div>
         }
         <div class="input-box">
-          <label for="messageInput">{{ form.messageLabel }}</label>
-          <textarea id="messageInput" name="mensagem"></textarea>
+          <label for="messageInput">{{ formCopy.messageLabel }}</label>
+          <textarea id="messageInput" name="message" formControlName="message"
+            [attr.aria-invalid]="showFieldError('message') ? 'true' : 'false'"
+            [attr.aria-describedby]="showFieldError('message') ? 'messageInput-error' : null"
+            [class.input-error]="showFieldError('message')"></textarea>
+          @if (showFieldError('message')) {
+          <p class="field-error" id="messageInput-error">{{ getFieldError('message', formCopy.messageLabel) }}</p>
+          }
         </div>
-        <button class="btn-solid"><lucide-icon [img]="Send" /> {{ form.submitLabel }}</button>
-      </div>
+
+        <div class="honeypot-field" aria-hidden="true">
+          <label for="companyInput">Empresa</label>
+          <input id="companyInput" type="text" name="company" formControlName="company" tabindex="-1"
+            autocomplete="off">
+        </div>
+
+        <button class="btn-solid" type="submit" [disabled]="contactForm.invalid || isSubmitting()"
+          [attr.aria-busy]="isSubmitting() ? 'true' : 'false'">
+          <lucide-icon [img]="Send" />
+          @if (isSubmitting()) {
+          Enviando...
+          } @else {
+          {{ formCopy.submitLabel }}
+          }
+        </button>
+
+        @if (submitError()) {
+        <p class="submit-feedback submit-feedback-error" role="alert">{{ submitError() }}</p>
+        }
+
+        @if (submitSuccess()) {
+        <p class="submit-feedback submit-feedback-success" role="status" aria-live="polite">
+          Sua mensagem foi enviada. Obrigado pelo contato!
+        </p>
+        }
+      </form>
     </div>
   </div>
 </section>

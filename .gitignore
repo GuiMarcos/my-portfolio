@@ -48,3 +48,9 @@ Thumbs.db
 .gemini/
 AGENTS.md
 temp.md
+
+# Local secret configs
+.env
+.env.*
+!.env.example
+src/environments/environment.local.ts
