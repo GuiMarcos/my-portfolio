@@ -1,13 +1,14 @@
 import { inject, Injectable, signal } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { GitHubRepo } from '@shared/models/github.model';
+import { githubUsername } from '@shared/config/profile-links';
 
 @Injectable({
   providedIn: 'root',
 })
 export class GitHubService {
   private readonly http = inject(HttpClient);
-  private readonly GITHUB_USERNAME = 'GuiMarcos';
+  private readonly GITHUB_USERNAME = githubUsername;
   private readonly API_URL = `https://api.github.com/users/${this.GITHUB_USERNAME}/repos`;
 
   readonly repositories = signal<GitHubRepo[]>([]);

@@ -3,6 +3,7 @@ import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { LucideAngularModule, Mail, Phone, MapPin, Send } from 'lucide-angular';
 import { ToastrService } from 'ngx-toastr';
 import { ContactService } from '@core/services/contact.service';
+import { profileLinks } from '@shared/config/profile-links';
 import { ContactFormFieldName, ContactFormPayload, ContactItem, FormField } from '@shared/models/contact.model';
 
 @Component({
@@ -26,8 +27,8 @@ export class Contact {
   readonly infosTitle = 'Informações de Contato';
 
   readonly contactItems: ContactItem[] = [
-    { icon: Mail, label: 'Email', info: 'guilherme.amarcos@gmail.com' },
-    { icon: Phone, label: 'Telefone', info: '+55 (51) 98240-0703' },
+    { icon: Mail, label: 'Email', info: profileLinks.email },
+    { icon: Phone, label: 'Telefone', info: profileLinks.phone },
     { icon: MapPin, label: 'Localização', info: 'Paraná, Brasil' },
   ];
 

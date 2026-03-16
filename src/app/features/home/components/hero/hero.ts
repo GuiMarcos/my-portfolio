@@ -2,6 +2,7 @@ import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { LucideAngularModule, Github, Linkedin, Mail, ArrowDown } from 'lucide-angular';
 import { NgOptimizedImage } from '@angular/common';
 import { Router } from '@angular/router';
+import { githubUsername, profileLinks, profileUrls } from '@shared/config/profile-links';
 
 @Component({
   selector: 'app-hero',
@@ -19,7 +20,7 @@ export class Hero {
   readonly ArrowDown = ArrowDown;
 
   readonly content = {
-    photo: { src: 'https://github.com/GuiMarcos.png?size=800', alt: 'Foto de Guilherme' },
+    photo: { src: `https://github.com/${githubUsername}.png?size=800`, alt: 'Foto de Guilherme' },
     greeting: 'Olá, eu sou',
     name: 'Guilherme Marcos',
     jobTitle: 'Desenvolvedor Full Stack',
@@ -30,9 +31,9 @@ export class Hero {
       contact: 'Entre em Contato',
     },
     links: {
-      github: 'http://',
-      linkedin: 'http://',
-      email: 'http://',
+      github: profileLinks.github,
+      linkedin: profileLinks.linkedin,
+      email: profileUrls.mailto,
     },
   };
 
