@@ -38,9 +38,9 @@ export class Footer {
   ];
 
   protected readonly services: string[] = [
-    'Desenvolvimento Web',
+    'Desenvolvimento Frontend',
+    'Desenvolvimento Backend',
     'UI/UX Design',
-    'Consultoria',
     'Freelance',
   ];
 }
