@@ -1,6 +1,6 @@
 # My Portfolio
 
-[![Deploy to guimarcos.github.io](https://github.com/GuiMarcos/my-portfolio/actions/workflows/deploy-user-page.yml/badge.svg?branch=main)](https://github.com/GuiMarcos/my-portfolio/actions/workflows/deploy-user-page.yml)
+[![Deploy to guimarcos.github.io](https://github.com/GuiMarcos/my-portfolio/actions/workflows/deploy-user-page.yml/badge.svg?branch=master)](https://github.com/GuiMarcos/my-portfolio/actions/workflows/deploy-user-page.yml)
 
 Portfolio built with Angular 21.
 
