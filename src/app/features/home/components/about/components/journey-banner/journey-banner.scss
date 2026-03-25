@@ -35,8 +35,16 @@
   font-size: $font-size-sm;
 
   .highlight {
-    font-size: $font-size-xl;
+    font-size: $font-size-md;
     font-weight: 800;
+
+    @media screen and (min-width: #{$breakpoint-md}) {
+      font-size: $font-size-lg;
+    }
+
+    @media screen and (min-width: #{$breakpoint-lg}) {
+      font-size: $font-size-xl;
+    }
   }
 }
 
