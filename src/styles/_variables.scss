@@ -21,13 +21,15 @@ $font-size-3xl: typography.$font-size-3xl;
 
 $vertical-padding: 10px;
 $horizontal-padding-sm: 1.5rem;
-$horizontal-padding-md: 10rem;
+$horizontal-padding-md: 5rem;
 $horizontal-padding-lg: 15rem;
 $header-height: 40px;
 
 $breakpoint-md: 800px;
 $breakpoint-lg: 1200px;
 
+$hero-image-size-sm: 200px;
+$hero-image-size-md: 300px;
 $hero-image-size-lg: 450px;
 
 // Responsive gaps (clamp: mobile → desktop)

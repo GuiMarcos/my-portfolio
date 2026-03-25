@@ -35,9 +35,17 @@
 
     img {
       display: block;
+      width: $hero-image-size-sm;
       height: auto;
-      border-radius: 16px;
       border: solid 1px var(--primary);
+      aspect-ratio: 1/1;
+      object-fit: cover;
+      border-radius: 50%;
+
+      @media screen and (min-width: #{$breakpoint-md}) {
+        width: $hero-image-size-md;
+        height: auto;
+      }
 
       @media screen and (min-width: #{$breakpoint-lg}) {
         width: $hero-image-size-lg;
@@ -52,6 +60,7 @@
   flex-direction: column;
   flex-grow: 1;
   justify-content: space-evenly;
+  gap: $gap-sm;
 
   @media screen and (min-width: #{$breakpoint-md}) {
     order: 0;
