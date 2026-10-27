@@ -22,7 +22,7 @@ export class Hero {
     name: 'Guilherme Marcos',
     jobTitle: 'Desenvolvedor Full Stack',
     description:
-      'Transformando ideias em soluções digitais escaláveis. Desenvolvedor full stack dedicado a criar experiências de usuário impactantes, unindo código limpo, boas práticas de arquitetura e design centrado no usuário para entregar valor real.',
+      'Transformando ideias em soluções digitais escaláveis. Desenvolvo aplicações web, mobile e backend, de interfaces em React e Angular a APIs e integrações em Django, unindo código limpo, performance e design centrado no usuário para entregar valor real.',
     buttons: {
       projects: 'Ver Projetos',
       contact: 'Entre em Contato',

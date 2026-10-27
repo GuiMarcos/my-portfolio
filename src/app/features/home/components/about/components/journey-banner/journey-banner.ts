@@ -81,11 +81,11 @@ export class JourneyBanner {
         parts: [
           { text: 'skills:', cssClass: 'property' },
           { text: ' [' },
+          { text: "'React'", cssClass: 'string' },
+          { text: ', ' },
           { text: "'Angular'", cssClass: 'string' },
           { text: ', ' },
-          { text: "'Sass'", cssClass: 'string' },
-          { text: ', ' },
-          { text: "'JS'", cssClass: 'string' },
+          { text: "'Django'", cssClass: 'string' },
           { text: '],' },
         ],
       },
@@ -105,7 +105,7 @@ export class JourneyBanner {
         parts: [
           { text: 'motto:', cssClass: 'property' },
           { text: ' ' },
-          { text: '"Construir com proposito"', cssClass: 'string' },
+          { text: '"Construir com propósito"', cssClass: 'string' },
         ],
       },
       {
