@@ -18,7 +18,7 @@ export class About {
     {
       icon: ChevronsLeftRight,
       title: 'Desenvolvimento',
-      text: 'Construção de aplicações web e desktop completas, atuando em frontend, backend e infraestrutura. Especializado em criar soluções escaláveis e mantíveis.',
+      text: 'Construção de aplicações web, mobile e desktop completas, atuando em frontend, backend e integrações. Especializado em criar soluções escaláveis e mantíveis.',
     },
     {
       icon: Lightbulb,
