@@ -33,9 +33,9 @@ export class JourneyBanner {
     },
     {
       period: 'Estágio · UTFPR',
-      title: 'Modernização de sistemas institucionais',
+      title: 'Modernização de sistemas institucionais com Angular',
       description:
-        'Atuei na UTFPR na evolução de sistemas com cerca de 30 mil usuários, trabalhando na modernização de aplicações legadas, melhorias de interface com JavaScript, HTML e CSS e ajustes em banco de dados com PL/SQL para aumentar estabilidade e confiabilidade.',
+        'Atuei na UTFPR na evolução de sistemas com cerca de 30 mil usuários, modernizando aplicações legadas com Angular, Svelte e Node.js, integrando APIs REST e formulários reativos e realizando ajustes em banco de dados com PL/SQL. Também conduzi melhorias de performance que elevaram aplicações de 36 para 94 no Lighthouse.',
     },
     {
       period: 'Abril/2026 – Presente',
