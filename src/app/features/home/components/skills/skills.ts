@@ -20,17 +20,17 @@ export class Skills {
       className: 'front',
       items: [
         { name: 'Angular', level: 90 },
+        { name: 'React', level: 85 },
+        { name: 'React Native', level: 75 },
         { name: 'TypeScript', level: 85 },
-        { name: 'CSS/SCSS', level: 90 },
-        { name: 'HTML', level: 95 },
       ],
     },
     {
       title: 'Backend',
       className: 'back',
       items: [
-        { name: 'Java', level: 75 },
         { name: 'Python', level: 80 },
+        { name: 'Django', level: 80 },
         { name: 'Node.js', level: 70 },
         { name: 'SQL', level: 85 },
       ],
@@ -49,7 +49,13 @@ export class Skills {
 
   protected readonly otherTechnologies: string[] = [
     'JavaScript',
+    'HTML / CSS',
+    'Svelte',
+    'Java',
+    'Celery',
+    'Redis',
     'RabbitMQ',
+    'PL/SQL',
     'REST API',
     'Tailwind CSS',
     'SASS',
@@ -70,5 +76,7 @@ export class Skills {
     'Design Responsivo',
     'Prog. Orientada a Objetos',
     'Microserviços',
+    'Integração com ERP',
+    'Offline-first',
   ];
 }

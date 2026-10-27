@@ -12,6 +12,7 @@ export class GitHubService {
   private readonly API_URL = `https://api.github.com/users/${this.GITHUB_USERNAME}/repos`;
   private readonly cacheKey = 'github_repositories_cache_v1';
   private readonly cacheTtlMs = 1000 * 60 * 30;
+  private readonly previewChecks = new Map<string, Promise<boolean>>();
 
   readonly repositories = signal<GitHubRepo[]>([]);
   readonly loading = signal(false);
@@ -61,6 +62,26 @@ export class GitHubService {
 
   getPreviewImageUrl(repoName: string, branch = 'main'): string {
     return `https://raw.githubusercontent.com/${this.GITHUB_USERNAME}/${repoName}/${branch}/preview.png`;
+  }
+
+  hasPreviewImage(url: string): Promise<boolean> {
+    const cached = this.previewChecks.get(url);
+    if (cached) return cached;
+
+    const check = new Promise<boolean>((resolve) => {
+      if (typeof Image === 'undefined') {
+        resolve(false);
+        return;
+      }
+
+      const img = new Image();
+      img.onload = () => resolve(img.naturalWidth > 0);
+      img.onerror = () => resolve(false);
+      img.src = url;
+    });
+
+    this.previewChecks.set(url, check);
+    return check;
   }
 
   getRepositoryPublicUrl(repo: GitHubRepo): string {

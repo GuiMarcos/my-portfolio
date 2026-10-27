@@ -13,10 +13,10 @@ import { AboutStat, CodeSnippet, JourneyStep } from '@shared/models/about.model'
 export class JourneyBanner {
   protected readonly subtitle = 'Minha Jornada';
   protected readonly text =
-    'Minha trajetória combina base acadêmica sólida em Engenharia da Computação com experiência prática em sistemas reais. Ao longo desse caminho, desenvolvi aplicações desktop e web, aprofundei fundamentos de banco de dados e arquitetura e passei a atuar em produtos com foco em performance, experiência do usuário e entrega de valor.';
+    'Minha trajetória combina base acadêmica sólida em Engenharia da Computação com experiência prática em sistemas reais. Ao longo desse caminho, desenvolvi aplicações desktop, web e mobile, aprofundei fundamentos de banco de dados e arquitetura e passei a atuar em produtos com foco em performance, experiência do usuário e entrega de valor.';
   protected readonly stats: AboutStat[] = [
     { label: 'Foco de atuação', value: 'Performance e experiência' },
-    { label: 'Contexto de projetos', value: 'Sistemas de grande porte' },
+    { label: 'Contexto de projetos', value: 'ERP e sistemas de grande porte' },
   ];
   protected readonly journeySteps: JourneyStep[] = [
     {
@@ -32,16 +32,16 @@ export class JourneyBanner {
         'Desenvolvi projetos em Java desktop, incluindo um totem de autoatendimento com JDBC e operações CRUD em banco relacional, além de um sistema de processamento SQL sobre arquivos CSV com foco em modelagem, camadas e clareza da lógica de negócio.',
     },
     {
-      period: 'Estágio atual',
-      title: 'Modernização de sistemas institucionais',
+      period: 'Estágio · UTFPR',
+      title: 'Modernização de sistemas institucionais com Angular',
       description:
-        'Atuo na UTFPR na evolução de sistemas com cerca de 30 mil usuários, trabalhando na modernização de aplicações legadas, melhorias de interface com JavaScript, HTML e CSS e ajustes em banco de dados com PL/SQL para aumentar estabilidade e confiabilidade.',
+        'Atuei na UTFPR na evolução de sistemas com cerca de 30 mil usuários, modernizando aplicações legadas com Angular, Svelte e Node.js, integrando APIs REST e formulários reativos e realizando ajustes em banco de dados com PL/SQL. Também conduzi melhorias de performance que elevaram aplicações de 36 para 94 no Lighthouse.',
     },
     {
-      period: 'Agora',
-      title: 'Full stack com Angular, UX e performance',
+      period: 'Abril/2026 – Presente',
+      title: 'Estágio em Desenvolvimento de Software · FKN Informática',
       description:
-        'Hoje concentro meu desenvolvimento em aplicações web com Angular, Svelte e Node.js, integrando APIs REST, formulários reativos e boas práticas de componentização. Nesse processo, também atuei em melhorias concretas de performance, elevando aplicações de 36 para 94 no Lighthouse.',
+        'Atuo no desenvolvimento de um sistema de gestão de serviços integrado a um ERP corporativo, com interfaces administrativas em React, aplicativos em React Native e funcionalidades e integrações em Django. Otimizei consultas ao banco, refatorei módulos críticos de mais de 3.000 para cerca de 800 linhas por meio de componentização e melhorei LCP e FCP. Também desenvolvi integrações REST com ERPs externos, rotinas assíncronas com Celery e Redis e funcionalidades offline-first no app mobile.',
     },
   ];
 
@@ -81,11 +81,11 @@ export class JourneyBanner {
         parts: [
           { text: 'skills:', cssClass: 'property' },
           { text: ' [' },
+          { text: "'React'", cssClass: 'string' },
+          { text: ', ' },
           { text: "'Angular'", cssClass: 'string' },
           { text: ', ' },
-          { text: "'Sass'", cssClass: 'string' },
-          { text: ', ' },
-          { text: "'JS'", cssClass: 'string' },
+          { text: "'Django'", cssClass: 'string' },
           { text: '],' },
         ],
       },
@@ -105,7 +105,7 @@ export class JourneyBanner {
         parts: [
           { text: 'motto:', cssClass: 'property' },
           { text: ' ' },
-          { text: '"Construir com proposito"', cssClass: 'string' },
+          { text: '"Construir com propósito"', cssClass: 'string' },
         ],
       },
       {
