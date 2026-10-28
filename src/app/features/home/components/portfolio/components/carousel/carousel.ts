@@ -41,6 +41,9 @@ export class Carousel implements AfterViewInit, OnDestroy {
       centeredSlides: false,
       grabCursor: true,
       initialSlide: 0,
+      centerInsufficientSlides: true,
+      observer: true,
+      observeParents: true,
       breakpoints: {
         800: { slidesPerView: 2.15, spaceBetween: 22 },
         1200: { slidesPerView: 3.25, spaceBetween: 26 },
