@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, computed, effect, inject, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { LucideAngularModule, ArrowUpRight } from 'lucide-angular';
 import { Project } from '@shared/models/portfolio.model';
 import { GitHubRepo } from '@shared/models/github.model';
 import { GitHubService } from '@core/services/github.service';
@@ -7,7 +8,7 @@ import { Carousel } from './components/carousel/carousel';
 
 @Component({
   selector: 'app-portfolio',
-  imports: [RouterLink, Carousel],
+  imports: [RouterLink, Carousel, LucideAngularModule],
   templateUrl: './portfolio.html',
   styleUrl: './portfolio.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -15,11 +16,15 @@ import { Carousel } from './components/carousel/carousel';
 export class Portfolio {
   private readonly githubService = inject(GitHubService);
   private readonly carouselProjectsLimit = 10;
+  private readonly otherProjectsLimit = 6;
+
+  protected readonly ArrowUpRight = ArrowUpRight;
 
   readonly sectionTitle = 'Meus Projetos';
   readonly description =
     'Uma curadoria dos meus melhores trabalhos, refletindo minha expertise em desenvolvimento full stack, design responsivo e soluções escaláveis. Cada projeto representa desafios superados e aprendizados aplicados na prática.';
   readonly allProjectsLabel = 'Ver todos os projetos';
+  readonly otherProjectsTitle = 'Outros projetos';
 
   // Estes 3 ficam em destaque no inicio. O restante e completado automaticamente.
   private readonly featuredRepoNames = ['StarbuckProj', 'CarSalesProj', 'ProjetoAnaliseDeSistemas'];
@@ -34,8 +39,9 @@ export class Portfolio {
     return [...featuredRepos, ...extraRepos];
   });
 
-  // Apenas repositorios com preview.png valido entram no carrossel.
+  // Apenas repositorios com preview.png valido entram no carrossel; o restante vai para a lista.
   protected readonly projects = signal<Project[]>([]);
+  protected readonly otherProjects = signal<Project[]>([]);
 
   constructor() {
     effect((onCleanup) => {
@@ -44,7 +50,15 @@ export class Portfolio {
       onCleanup(() => (cancelled = true));
 
       void this.selectReposWithPreview(candidates).then((repos) => {
-        if (!cancelled) this.projects.set(repos.map((repo) => this.toProject(repo)));
+        if (cancelled) return;
+
+        const carouselSet = new Set(repos.map((repo) => repo.name));
+        const others = candidates
+          .filter((repo) => !carouselSet.has(repo.name))
+          .slice(0, this.otherProjectsLimit);
+
+        this.projects.set(repos.map((repo) => this.toProject(repo)));
+        this.otherProjects.set(others.map((repo) => this.toProject(repo)));
       });
     });
   }

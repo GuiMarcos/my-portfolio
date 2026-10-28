@@ -2,7 +2,30 @@
   <div class="container content">
     <h2 class="title">{{ sectionTitle }}</h2>
     <p class="description">{{ description }}</p>
+    @if (projects().length > 0) {
     <app-carousel [projects]="projects()"></app-carousel>
+    }
+    @if (otherProjects().length > 0) {
+    <div class="other-projects">
+      <h3 class="other-projects-title">{{ otherProjectsTitle }}</h3>
+      <ul class="other-projects-list">
+        @for (project of otherProjects(); track project.repositoryName) {
+        <li>
+          <a class="other-project" [href]="project.liveUrl" target="_blank" rel="noopener noreferrer">
+            <div class="other-project-info">
+              <span class="other-project-name" [title]="project.title">{{ project.title }}</span>
+              <span class="other-project-description">{{ project.description }}</span>
+            </div>
+            @if (project.techs.length > 0) {
+            <span class="other-project-tech">{{ project.techs[0] }}</span>
+            }
+            <lucide-icon class="other-project-icon" [img]="ArrowUpRight" [size]="18" aria-hidden="true"></lucide-icon>
+          </a>
+        </li>
+        }
+      </ul>
+    </div>
+    }
     <button class="all-projects-btn btn-outline" type="button" routerLink="/allProjects">{{ allProjectsLabel }}</button>
   </div>
 </section>

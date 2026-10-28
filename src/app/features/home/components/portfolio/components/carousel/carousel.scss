@@ -1,5 +1,11 @@
 @use '../../../../../../../styles/variables' as *;
 
+:host {
+  display: block;
+  width: 100%;
+  min-width: 0;
+}
+
 .carousel {
   position: relative;
   display: grid;
